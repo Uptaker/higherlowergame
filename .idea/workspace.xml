@@ -4,10 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="add assignment README">
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="add IDEA run configuration for starting UI">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/higherlower.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/MovieRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/utils/BaseRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/utils/TestData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/resources/application-test.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-test-db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/higherlower.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/higherlower.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +49,14 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,9 +85,11 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "android.gradle.sync.needed": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "/home/markus/work/higherlowergame",
+    "last_opened_file_path": "/home/markus/work/higherlowergame/api/src/test/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,7 +98,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsDialog.application.dockerMachine",
+    "settings.editor.selected.configurable": "preferences.general",
     "ts.external.directory.path": "/home/markus/work/higherlowergame/ui/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -84,11 +110,80 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/db" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/src/main/resources" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.tammeoja.higherlower.repositories" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tammeoja.higherlower.utils" />
+    </key>
   </component>
-  <component name="RunManager" selected="npm.Svelte check">
+  <component name="RunManager" selected="JUnit.Unit tests">
+    <configuration name="MovieRepositoryTest.save_and_load" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.tammeoja.higherlower.repositories.MovieRepositoryTest.save_and_load&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <EXTENSION ID="com.intellij.execution.ExternalSystemRunConfigurationJavaExtension">
+        <extension name="net.ashald.envfile">
+          <option name="IS_ENABLED" value="false" />
+          <option name="IS_SUBST" value="false" />
+          <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+          <option name="IS_IGNORE_MISSING_FILES" value="false" />
+          <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+          <ENTRIES>
+            <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+          </ENTRIES>
+        </extension>
+      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit tests" type="JUnit" factoryName="JUnit">
+      <module name="higherlower.test" />
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,13 +199,12 @@
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <envs>
+        <env name="DB_MIGRATION_USERNAME" value="app" />
+        <env name="DB_PASSWORD" value="password" />
         <env name="DB_PORT" value="5432" />
         <env name="DB_URL" value="jdbc:postgresql://localhost:5432/higherlower" />
-        <env name="POSTGRES_DB" value="higherlower" />
-        <env name="POSTGRES_PASSWORD" value="password" />
-        <env name="POSTGRES_USER" value="app" />
         <env name="DB_USERNAME" value="app" />
-        <env name="DB_PASSWORD" value="password" />
+        <env name="DB_MIGRATION_PASSWORD" value="password" />
       </envs>
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="higherlower.main" />
@@ -170,12 +264,15 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml.higherlower-db: Compose Deployment" />
+      <item itemvalue="Gradle.MovieRepositoryTest.save_and_load" />
+      <item itemvalue="JUnit.Unit tests" />
       <item itemvalue="npm.Svelte check" />
       <item itemvalue="npm.Start UI" />
       <item itemvalue="Spring Boot.HigherlowerApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MovieRepositoryTest.save_and_load" />
         <item itemvalue="npm.Start UI" />
         <item itemvalue="npm.Svelte check" />
         <item itemvalue="Docker.docker-compose.yml.higherlower-db: Compose Deployment" />
@@ -194,7 +291,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="1942000" />
+      <workItem from="1699807209368" duration="10273000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -228,7 +325,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699808771251</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated idea files">
+      <option name="closed" value="true" />
+      <created>1699809209519</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699809209519</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add IDEA run configuration for starting UI">
+      <option name="closed" value="true" />
+      <created>1699809293791</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699809293791</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +375,8 @@
     <MESSAGE value="add minimal Vite/TS/Tailwind UI setup" />
     <MESSAGE value="add envs for docker-compose to read" />
     <MESSAGE value="add assignment README" />
-    <option name="LAST_COMMIT_MESSAGE" value="add assignment README" />
+    <MESSAGE value="updated idea files" />
+    <MESSAGE value="add IDEA run configuration for starting UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="add IDEA run configuration for starting UI" />
   </component>
 </project>

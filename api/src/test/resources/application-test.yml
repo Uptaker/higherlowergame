@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/higherlower_test
+    username: test_user
+    password: password
+
+  liquibase:
+    contexts: test
+    dropFirst: true
+    user: test_user
+    password: password
