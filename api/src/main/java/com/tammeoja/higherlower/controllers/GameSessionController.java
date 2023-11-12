@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/game-session")
+@RequestMapping("/api/game-sessions")
 public class GameSessionController {
     private final GameSessionService gameSessionService;
 
