@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="">
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="add assignment README">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,8 +182,41 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="1232000" />
+      <workItem from="1699807209368" duration="1942000" />
     </task>
+    <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
+      <option name="closed" value="true" />
+      <created>1699808519595</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699808519595</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add minimal Vite/TS/Tailwind UI setup">
+      <option name="closed" value="true" />
+      <created>1699808658701</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699808658701</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add envs for docker-compose to read">
+      <option name="closed" value="true" />
+      <created>1699808735855</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699808735855</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add assignment README">
+      <option name="closed" value="true" />
+      <created>1699808771251</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699808771251</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,5 +244,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add variabes to be re" />
+    <MESSAGE value="add minimal Vite/TS/Tailwind UI setup" />
+    <MESSAGE value="add envs for docker-compose to read" />
+    <MESSAGE value="add assignment README" />
+    <option name="LAST_COMMIT_MESSAGE" value="add assignment README" />
   </component>
 </project>
