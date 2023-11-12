@@ -1,9 +1,7 @@
 package com.tammeoja.higherlower.controllers;
 
-import com.tammeoja.higherlower.entities.GameSession;
 import com.tammeoja.higherlower.entities.GameSession.Category;
 import com.tammeoja.higherlower.services.GameSessionService;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

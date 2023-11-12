@@ -1,6 +1,5 @@
 package com.tammeoja.higherlower.entities;
 
-import jdk.jfr.Category;
 import lombok.Builder;
 
 import java.time.Instant;
