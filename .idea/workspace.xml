@@ -88,7 +88,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.check">
+  <component name="RunManager" selected="npm.Svelte check">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,7 +148,17 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="check" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="Start UI" type="js.build_tools.npm" temporary="true">
+      <package-json value="$PROJECT_DIR$/ui/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Svelte check" type="js.build_tools.npm" temporary="true">
       <package-json value="$PROJECT_DIR$/ui/package.json" />
       <command value="run" />
       <scripts>
@@ -160,12 +170,14 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml.higherlower-db: Compose Deployment" />
-      <item itemvalue="npm.check" />
+      <item itemvalue="npm.Svelte check" />
+      <item itemvalue="npm.Start UI" />
       <item itemvalue="Spring Boot.HigherlowerApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.check" />
+        <item itemvalue="npm.Start UI" />
+        <item itemvalue="npm.Svelte check" />
         <item itemvalue="Docker.docker-compose.yml.higherlower-db: Compose Deployment" />
       </list>
     </recent_temporary>
