@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/setup.sql
+  - include:
+      file: db/movies.sql
+  - include:
+      file: db/movies_data.sql
