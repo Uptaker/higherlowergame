@@ -1,1 +1,6 @@
-export {}
+export enum Category {
+    VOTE_AVERAGE = "VOTE_AVERAGE",
+    POPULARITY = "POPULARITY",
+    RUNTIME = "RUNTIME",
+    REVENUE = "REVENUE"
+}

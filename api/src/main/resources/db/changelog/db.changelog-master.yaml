@@ -5,3 +5,5 @@ databaseChangeLog:
       file: db/movies.sql
   - include:
       file: db/movies_data.sql
+  - include:
+      file: db/game_sessions.sql
