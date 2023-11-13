@@ -20,7 +20,7 @@ public class UserService {
                 .httpOnly(true)
                 .path("/")
                 .secure(true)
-                .maxAge(LocalDateTime.now().plusYears(100).toEpochSecond(ZoneOffset.UTC))
+                .maxAge(LocalDateTime.now(clock).plusYears(100).toEpochSecond(ZoneOffset.UTC))
                 .build();
         response.addHeader("Set-Cookie", cookie.toString());
     }
