@@ -46,30 +46,9 @@
     {#if session && gameRound}
     <div>{session.category} - Higher or lower?</div>
     <div class="grid grid-cols-12 justify-between gap-2 justify-items-center">
-        <div class="col-span-5 w-full">
-            <h2>{gameRound.current.title}</h2>
-        </div>
-        <div>inbetween</div>
-        <div class="col-span-5 w-full">
-            <h2>{gameRound.next.title}</h2>
-            {#if gameEnded}
-                {@const score = gameRound.score}
-                <h4>Game over!</h4>
-                <p>Your score: <b>{gameRound.score}</b></p>
-                {#if score === 0}
-                    <p>Pfft! Did ya even try?</p>
-                {/if}
-
-                <div class="mt-10">
-                    <Link to="/">Go back</Link>
-                </div>
-            {:else}
-                <div class="flex flex-col gap-6">
-                    <Button on:click={() => choose(true)} label="Higher"/>
-                    <Button on:click={() => choose(false)} label="Lower"/>
-                </div>
-            {/if}
-        </div>
+        <MovieCard movie={gameRound.current} class="col-span-5 w-full"/>
+        <div></div>
+        <MovieCard movie={gameRound.next} class="col-span-5 w-full"/>
     </div>
         {#if gameEnded && rounds.length}
             {@const score = gameRound.score}
