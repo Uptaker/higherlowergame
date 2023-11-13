@@ -14,6 +14,11 @@ import java.util.UUID;
 public class GameSessionController {
     private final GameSessionService gameSessionService;
 
+    @GetMapping
+    public List<GameSession> list(@CookieValue("userId") UUID userId) {
+        return gameSessionService.findByUserId(userId);
+    }
+
     @GetMapping("/{gameSessionId}")
     public GameSession start(@CookieValue("userId") UUID userId, @PathVariable UUID gameSessionId) {
         return gameSessionService.find(gameSessionId, userId);

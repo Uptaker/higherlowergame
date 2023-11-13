@@ -1,5 +1,6 @@
 package com.tammeoja.higherlower.services;
 
+import com.tammeoja.higherlower.controllers.GameSessionController;
 import com.tammeoja.higherlower.entities.GameRound;
 import com.tammeoja.higherlower.entities.GameRoundView;
 import com.tammeoja.higherlower.entities.GameSession;
@@ -8,11 +9,14 @@ import com.tammeoja.higherlower.repositories.GameSessionRepository;
 import com.tammeoja.higherlower.repositories.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
 import java.util.UUID;
 
 import static com.tammeoja.higherlower.entities.GameRound.State.FAIL;
 import static com.tammeoja.higherlower.entities.GameRound.State.WIN;
+import static org.springframework.http.HttpStatus.FORBIDDEN;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +24,19 @@ public class GameSessionService {
     private final GameSessionRepository gameSessionRepository;
     private final MovieRepository movieRepository;
     private final GameRoundService gameRoundService;
+
+    public GameSessionController.GameSessionsView view(UUID gameSessionId, UUID userId) {
+        var gameSession = gameSessionRepository.find(gameSessionId);
+        if (!gameSession.userId().equals(userId)) throw new ResponseStatusException(FORBIDDEN);
+        var rounds = gameRoundService.rounds(gameSessionId).stream().map(this::asView).toList();
+        return new GameSessionController.GameSessionsView(gameSession, rounds);
+    }
+
+    public GameSession find(UUID gameSessionId, UUID userId) {
+        var gameSession = gameSessionRepository.find(gameSessionId);
+        if (!gameSession.userId().equals(userId)) throw new ResponseStatusException(FORBIDDEN);
+        return gameSession;
+    }
 
     public UUID start(UUID userId, GameSession.Category category) {
         var gameSessionId = gameSessionRepository.create(userId, category);
@@ -60,5 +77,9 @@ public class GameSessionService {
             case RUNTIME -> isHigher ? next.runtime() > current.runtime() : next.runtime() < current.runtime();
             case REVENUE -> isHigher ? next.revenue() > current.revenue() : next.revenue() < current.revenue();
         };
+    }
+
+    public List<GameSession> findByUserId(UUID userId) {
+        return gameSessionRepository.findByUserId(userId);
     }
 }
