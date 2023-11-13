@@ -1,35 +1,66 @@
 <script lang="ts">
     import MainPageLayout from 'src/layout/MainPageLayout.svelte'
-    import {Category, GameRound} from "src/api/types";
+    import type {GameRoundView, GameSession} from "src/api/types";
+    import {GameRoundState} from "src/api/types";
     import Button from "src/components/Button.svelte";
     import api from "src/api/api";
+    import {showToast} from "src/stores/toasts";
+    import {Link} from "svelte-navigator";
 
     export let gameSessionId: string
-    let gameRound: GameRound
-
-    const humanReadableCategories = {
-        VOTE_AVERAGE: "Vote average",
-        POPULARITY: "Popularity",
-        RUNTIME: "Runtime",
-        REVENUE: "Revenue"
-    }
+    let gameSession: GameSession
+    let gameRound: GameRoundView
+    let gameEnded: boolean
 
     async function load() {
-        await api.get(`game-sessions/${gameSessionId}/round`)
+        gameSession = await api.get(`game-sessions/${gameSessionId}`)
+        await loadRound()
+        gameEnded = gameRound.state === GameRoundState.FAIL
     }
 
     $: load()
 
-    async function pickCategory(category: Category) {
-        await api.post('game-sessions/start/' + category)
+    async function loadRound() {
+        gameRound = await api.get(`game-sessions/${gameSessionId}/round`)
+    }
+
+    async function choose(isHigher: boolean) {
+        const correct = (await api.post(`game-sessions/${gameSessionId}/guess`, {isHigher}) as {correct: boolean}).correct
+        if (correct) {
+            showToast('Hurrah! Correct!')
+            await loadRound()
+        } else gameEnded = true
     }
 </script>
 
 <MainPageLayout>
-    <p>Choose category</p>
-    <div class="flex gap-4">
-        {#each Object.values(Category) as category}
-            <Button on:click={() => pickCategory(category)}>{humanReadableCategories[category]}</Button>
-        {/each}
+    {#if gameSession && gameRound}
+    <div>{gameSession.category} - Higher or lower?</div>
+    <div class="grid grid-cols-12 justify-between gap-2 justify-items-center">
+        <div class="col-span-5 w-full">
+            <h2>{gameRound.current.title}</h2>
+        </div>
+        <div>inbetween</div>
+        <div class="col-span-5 w-full">
+            <h2>{gameRound.next.title}</h2>
+            {#if gameEnded}
+                {@const score = gameRound.score}
+                <h4>Game over!</h4>
+                <p>Your score: <b>{gameRound.score}</b></p>
+                {#if score === 0}
+                    <p>Pfft! Did ya even try?</p>
+                {/if}
+
+                <div class="mt-10">
+                    <Link to="/">Go back</Link>
+                </div>
+            {:else}
+                <div class="flex flex-col gap-6">
+                    <Button on:click={() => choose(true)} label="Higher"/>
+                    <Button on:click={() => choose(false)} label="Lower"/>
+                </div>
+            {/if}
+        </div>
     </div>
+    {/if}
 </MainPageLayout>

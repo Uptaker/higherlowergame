@@ -12,9 +12,21 @@ export interface Movie {
     voteCount: number
 }
 
-export interface GameRound {
+export interface GameSession {
+    id: string
+    score: number
+    userId: string,
+    category: Category
+    createdAt: string
+    finishedAt?: string
+}
+
+export interface GameRoundView {
+    id: string
+    gameSessionId: string,
     current: Movie,
     next: Movie,
+    score: number,
     createdAt: string
     state: GameRoundState
 }

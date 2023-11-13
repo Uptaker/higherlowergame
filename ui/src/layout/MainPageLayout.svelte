@@ -8,6 +8,6 @@
   {/if}
 </svelte:head>
 
-<div class="min-h-screen relative bg-gradient-to-tl from-blue-200 via-slate-200 to-white">
+<div class="min-h-screen bg-gradient-to-tl from-blue-200 via-slate-200 to-white">
     <slot/>
 </div>

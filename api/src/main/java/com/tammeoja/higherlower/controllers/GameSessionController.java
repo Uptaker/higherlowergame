@@ -14,6 +14,11 @@ import java.util.UUID;
 public class GameSessionController {
     private final GameSessionService gameSessionService;
 
+    @GetMapping("/{gameSessionId}")
+    public GameSession start(@CookieValue("userId") UUID userId, @PathVariable UUID gameSessionId) {
+        return gameSessionService.find(gameSessionId, userId);
+    }
+
     @PostMapping("/start/{category}")
     public UUID start(@CookieValue("userId") UUID userId, @PathVariable Category category) {
         return gameSessionService.start(userId, category);
@@ -25,7 +30,7 @@ public class GameSessionController {
     }
 
     @PostMapping("/{gameSessionId}/guess")
-    public boolean guess(@PathVariable UUID gameSessionId, @RequestBody boolean isHigher) {
-        return gameSessionService.guess(gameSessionId, isHigher);
+    public Map<String, Boolean> guess(@PathVariable UUID gameSessionId, @RequestBody GuessRequest guessRequest) {
+        return Map.of("correct", gameSessionService.guess(gameSessionId, guessRequest.isHigher));
     }
 }

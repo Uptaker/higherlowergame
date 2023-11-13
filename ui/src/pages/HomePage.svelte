@@ -3,6 +3,7 @@
     import {Category} from "src/api/types";
     import Button from "src/components/Button.svelte";
     import api from "src/api/api";
+    import {navigate} from "svelte-navigator";
 
     const humanReadableCategories = {
         VOTE_AVERAGE: "Vote average",
@@ -12,7 +13,8 @@
     }
 
     async function pickCategory(category: Category) {
-        await api.post('game-sessions/start/' + category)
+        const gameId = await api.post('game-sessions/start/' + category)
+        navigate('/' + gameId)
     }
 </script>
 
