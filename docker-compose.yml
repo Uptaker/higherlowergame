@@ -7,8 +7,7 @@ services:
       - "8080:8080"
     restart: always
     depends_on:
-      higherlower-db:
-        condition: service_healthy
+      - higherlower-db
     environment:
       - DB_URL
       - DB_USERNAME=$DB_MIGRATION_USERNAME
@@ -25,10 +24,5 @@ services:
     volumes:
       - ./create-test-db.sql:/docker-entrypoint-initdb.d/create-test-db.sql
       - postgres-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 volumes:
   postgres-data:
