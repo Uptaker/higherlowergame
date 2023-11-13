@@ -5,9 +5,10 @@
     import Button from "src/components/Button.svelte";
     import api from "src/api/api";
     import {showToast} from "src/stores/toasts";
-    import {Link} from "svelte-navigator";
+    import {navigate} from "svelte-navigator";
     import Card from "src/components/Card.svelte";
     import MovieCard from "src/components/MovieCard.svelte";
+    import {humanReadableCategories} from "src/humanReadableUtils";
 
     export let gameSessionId: string
     let session: GameSession
@@ -38,13 +39,16 @@
         } else {
             await load()
         }
+    }
 
+    function homePage() {
+        navigate('/')
     }
 </script>
 
 <MainPageLayout>
     {#if session && gameRound}
-    <div>{session.category} - Higher or lower?</div>
+    <div class="text-center mt-3 my-6 text-2xl">{humanReadableCategories[session.category]} - Higher or lower?</div>
     <div class="grid grid-cols-12 justify-between gap-2 justify-items-center">
         <MovieCard movie={gameRound.current} class="col-span-5 w-full"/>
         <div></div>
@@ -58,9 +62,7 @@
                 {#if score === 0}
                     <p>Pfft! Did ya even try?</p>
                 {/if}
-                <div class="mt-10">
-                    <Link to="/">Go back</Link>
-                </div>
+                <Button class="success my-3" on:click={homePage} label="Try again"/>
             </div>
             <div class="flex flex-col gap-4 mb-3">
                 {#each rounds as round}

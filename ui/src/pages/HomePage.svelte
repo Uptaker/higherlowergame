@@ -6,15 +6,9 @@
     import api from "src/api/api";
     import {navigate} from "svelte-navigator";
     import Card from "src/components/Card.svelte";
+    import {humanReadableCategories} from "src/humanReadableUtils";
 
     let gameSessions: GameSession[]
-
-    const humanReadableCategories = {
-        VOTE_AVERAGE: "Vote average",
-        POPULARITY: "Popularity",
-        RUNTIME: "Runtime",
-        REVENUE: "Revenue"
-    }
 
     async function load() {
         gameSessions = await api.get('game-sessions')

@@ -5,7 +5,7 @@
 </script>
 
 <div class="{$$props.class ?? ''}">
-    <h2>{movie.title}</h2>
+    <h2 class="font-semibold">{movie.title}</h2>
     <div class="text-sm flex flex-col gap-4">
         <p class="italic">{movie.releaseDate}</p>
         {#if movie.tagline}
