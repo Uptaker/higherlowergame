@@ -14,7 +14,7 @@ public record Movie(
         String overview,
         BigDecimal popularity,
         LocalDate releaseDate,
-        int revenue,
+        long revenue,
         Double runtime,
         String tagline,
         String title,

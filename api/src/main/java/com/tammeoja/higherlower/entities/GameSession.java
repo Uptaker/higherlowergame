@@ -18,3 +18,4 @@ public record GameSession(
         VOTE_AVERAGE, POPULARITY, RUNTIME, REVENUE
     }
 }
+

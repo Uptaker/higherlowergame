@@ -8,16 +8,17 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import static com.tammeoja.higherlower.entities.GameSession.Category.*;
 import static java.util.UUID.randomUUID;
 
 @Repository
 @RequiredArgsConstructor
 public class MovieRepository {
+    private final NamedParameterJdbcTemplate jdbcTemplate;
     public final RowMapper<Movie> MOVIE_MAPPER = (rs, rowCount) -> Movie.builder()
       .id(UUID.fromString(rs.getString("id")))
       .runtime(rs.getDouble("runtime"))
@@ -26,13 +27,11 @@ public class MovieRepository {
       .originalTitle(rs.getString("original_title"))
       .voteCount(rs.getInt("vote_count"))
       .releaseDate(rs.getDate("release_date").toLocalDate())
-      .revenue(rs.getInt("revenue"))
+      .revenue(rs.getLong("revenue"))
       .voteAverage(rs.getDouble("vote_average"))
       .overview(rs.getString("overview"))
       .popularity(rs.getBigDecimal("popularity"))
       .build();
-
-    private final NamedParameterJdbcTemplate jdbcTemplate;
 
     public UUID save(Movie movie) {
         var movieId = movie.id() == null ? randomUUID() : movie.id();
@@ -62,5 +61,55 @@ public class MovieRepository {
         } catch (EmptyResultDataAccessException e) {
             return null;
         }
+    }
+
+    public UUID random() {
+        return jdbcTemplate.queryForObject("""
+            select id from movies order by random() limit 1
+            """, Map.of(), UUID.class);
+    }
+
+    public List<UUID> findIdsByGameSession(UUID gameSessionId) {
+        return jdbcTemplate.queryForList("""
+            select distinct m.id from movies m
+            left join game_rounds r1 on r1.currentMovieId = m.id
+            left join game_rounds r2 on r2.nextMovieId = m.id
+            where r1.gameSessionId = :gameSessionId and r2.gameSessionId = :gameSessionId
+                        """,
+                Map.of("gameSessionId", gameSessionId), UUID.class);
+    }
+
+    public UUID randomExcludingPlayedMoviesFor(UUID gameSessionId, UUID currentMovieId) {
+        return jdbcTemplate.queryForObject("""
+            select id from (with currentMovie as (select * from movies where id = :currentMovieId)
+            select m.id, category as category from movies m
+            cross join (select category from game_sessions where id = :gameId)
+            where id not in (select distinct currentMovieId from game_rounds where gameSessionId = :gameId)
+            and id not in (select distinct nextMovieId from game_rounds where gameSessionId = :gameId)
+            and (case when category = :popularityCategory then m.popularity != (select popularity from currentMovie) else true end)
+            and (case when category = :runtimeCategory then m.runtime != (select runtime from currentMovie) else true end)
+            and (case when category = :revenueCategory then m.revenue != (select revenue from currentMovie) else true end)
+            and (case when category = :voteAverageCategory then m.vote_average != (select vote_average from currentMovie) else true end)
+            order by random() limit 1) randomId
+            """, Map.of(
+            "gameId", gameSessionId,
+            "currentMovieId", currentMovieId,
+            "popularityCategory", POPULARITY.name(),
+            "runtimeCategory", RUNTIME.name(),
+            "revenueCategory", REVENUE.name(),
+            "voteAverageCategory", VOTE_AVERAGE.name()
+        ), UUID.class);
+    }
+
+    public UUID randomExcludingMovie(UUID movieId) {
+        return jdbcTemplate.queryForObject("""
+            with excludedMovie as (select * from movies where id = :movieId)
+            select id from movies
+            where id not in (:movieId) and revenue != (select excludedMovie.revenue from excludedMovie)
+            and vote_count != (select vote_count from excludedMovie)
+            and popularity != (select excludedMovie.popularity from excludedMovie)
+            and runtime != (select excludedMovie.runtime from excludedMovie)
+            order by random() limit 1
+            """, Map.of("movieId", movieId), UUID.class);
     }
 }

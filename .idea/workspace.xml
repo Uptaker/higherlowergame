@@ -4,18 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="setup repository tests &amp; use MovieRepository as verification">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/controllers/GameSessionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameSessionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/resources/db/game_sessions.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/GameSessionRepositoryTest.java" afterDir="false" />
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="use plural name for REST controller">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameRound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameRoundView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameRoundRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameRoundService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/GameRoundRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameRoundServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/db/changelog/db.changelog-master.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/controllers/GameSessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/controllers/GameSessionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameSessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameSessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/db/game_sessions.sql" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/db/game_sessions.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/MovieRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/MovieRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameSessionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameSessionServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/App.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/api/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/api/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/layout/MainPageLayout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/layout/MainPageLayout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +93,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "/home/markus/work/higherlowergame/api/src/main/resources/db/changelog",
+    "last_opened_file_path": "/home/markus/work/higherlowergame/ui/src/pages",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,14 +114,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.tammeoja.higherlower.repositories" />
       <recent name="com.tammeoja.higherlower.services" />
+      <recent name="com.tammeoja.higherlower.repositories" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ui/src/pages" />
+      <recent name="$PROJECT_DIR$/ui/src/stores" />
       <recent name="$PROJECT_DIR$/api/src/main/resources/db/changelog" />
       <recent name="$PROJECT_DIR$/api/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/db" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -124,13 +133,17 @@
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.tammeoja.higherlower.repositories" />
+      <recent name="com.tammeoja.higherlower.services" />
+      <recent name="com.tammeoja.higherlower.controllers" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tammeoja.higherlower.repositories" />
+      <recent name="com.tammeoja.higherlower.services" />
       <recent name="com.tammeoja.higherlower.utils" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.Unit tests">
-    <configuration name="GameSessionRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameSessionServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
@@ -143,7 +156,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.tammeoja.higherlower.repositories.GameSessionRepositoryTest&quot;" />
+            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -154,7 +167,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MovieRepositoryTest.save_and_load" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameSessionServiceTest.guess_higher_incorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
@@ -167,25 +180,85 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.tammeoja.higherlower.repositories.MovieRepositoryTest.save_and_load&quot;" />
+            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.guess_higher_incorrect&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <EXTENSION ID="com.intellij.execution.ExternalSystemRunConfigurationJavaExtension">
-        <extension name="net.ashald.envfile">
-          <option name="IS_ENABLED" value="false" />
-          <option name="IS_SUBST" value="false" />
-          <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-          <option name="IS_IGNORE_MISSING_FILES" value="false" />
-          <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-          <ENTRIES>
-            <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-          </ENTRIES>
-        </extension>
-      </EXTENSION>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="GameSessionServiceTest.guess_lower_correct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.guess_lower_correct&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="GameSessionServiceTest.guess_lower_incorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.guess_lower_incorrect&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MovieRepositoryTest.randomExcludingPlayedMoviesFor" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.tammeoja.higherlower.repositories.MovieRepositoryTest.randomExcludingPlayedMoviesFor&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
       <method v="2" />
@@ -255,55 +328,22 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.higherlower-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="higherlower-db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="Start UI" type="js.build_tools.npm" temporary="true">
-      <package-json value="$PROJECT_DIR$/ui/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="Svelte check" type="js.build_tools.npm" temporary="true">
-      <package-json value="$PROJECT_DIR$/ui/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="check" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Docker.docker-compose.yml.higherlower-db: Compose Deployment" />
-      <item itemvalue="Gradle.GameSessionRepositoryTest" />
-      <item itemvalue="Gradle.MovieRepositoryTest.save_and_load" />
+      <item itemvalue="Gradle.GameSessionServiceTest" />
+      <item itemvalue="Gradle.GameSessionServiceTest.guess_higher_incorrect" />
+      <item itemvalue="Gradle.GameSessionServiceTest.guess_lower_correct" />
+      <item itemvalue="Gradle.GameSessionServiceTest.guess_lower_incorrect" />
+      <item itemvalue="Gradle.MovieRepositoryTest.randomExcludingPlayedMoviesFor" />
       <item itemvalue="JUnit.Unit tests" />
-      <item itemvalue="npm.Svelte check" />
-      <item itemvalue="npm.Start UI" />
       <item itemvalue="Spring Boot.HigherlowerApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.GameSessionRepositoryTest" />
-        <item itemvalue="npm.Start UI" />
-        <item itemvalue="Gradle.MovieRepositoryTest.save_and_load" />
-        <item itemvalue="npm.Svelte check" />
-        <item itemvalue="Docker.docker-compose.yml.higherlower-db: Compose Deployment" />
+        <item itemvalue="Gradle.MovieRepositoryTest.randomExcludingPlayedMoviesFor" />
+        <item itemvalue="Gradle.GameSessionServiceTest" />
+        <item itemvalue="Gradle.GameSessionServiceTest.guess_lower_incorrect" />
+        <item itemvalue="Gradle.GameSessionServiceTest.guess_higher_incorrect" />
+        <item itemvalue="Gradle.GameSessionServiceTest.guess_lower_correct" />
       </list>
     </recent_temporary>
   </component>
@@ -320,7 +360,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="14946000" />
+      <workItem from="1699807209368" duration="42952000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -378,7 +418,63 @@
       <option name="project" value="LOCAL" />
       <updated>1699817787243</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="user can request a game session of any category">
+      <option name="closed" value="true" />
+      <created>1699822362783</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699822362783</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add test for GameSessionController &amp; passthrough service">
+      <option name="closed" value="true" />
+      <created>1699822944183</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699822944183</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add test for GameSessionController &amp; passthrough service">
+      <option name="closed" value="true" />
+      <created>1699822978969</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699822978969</updated>
+    </task>
+    <task id="LOCAL-00011" summary="system can check and set a user if there isn't any">
+      <option name="closed" value="true" />
+      <created>1699824663363</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699824663363</updated>
+    </task>
+    <task id="LOCAL-00012" summary="do not expire the userId cookie">
+      <option name="closed" value="true" />
+      <created>1699826278216</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699826278216</updated>
+    </task>
+    <task id="LOCAL-00013" summary="use plural name for REST controller">
+      <option name="closed" value="true" />
+      <created>1699826712577</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1699826712577</updated>
+    </task>
+    <task id="LOCAL-00014" summary="use plural name for REST controller">
+      <option name="closed" value="true" />
+      <created>1699904816150</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1699904816150</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,6 +511,12 @@
     <MESSAGE value="updated idea files" />
     <MESSAGE value="add IDEA run configuration for starting UI" />
     <MESSAGE value="setup repository tests &amp; use MovieRepository as verification" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup repository tests &amp; use MovieRepository as verification" />
+    <MESSAGE value="user can request a game session of any category" />
+    <MESSAGE value="add test for GameSessionController &amp; passthrough service" />
+    <MESSAGE value="system can check and set a user if there isn't any" />
+    <MESSAGE value="do not expire the userId cookie" />
+    <MESSAGE value="use plural name for REST controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="use plural name for REST controller" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
