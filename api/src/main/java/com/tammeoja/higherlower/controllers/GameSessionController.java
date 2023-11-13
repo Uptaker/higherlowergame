@@ -1,11 +1,14 @@
 package com.tammeoja.higherlower.controllers;
 
 import com.tammeoja.higherlower.entities.GameRoundView;
+import com.tammeoja.higherlower.entities.GameSession;
 import com.tammeoja.higherlower.entities.GameSession.Category;
 import com.tammeoja.higherlower.services.GameSessionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -20,8 +23,8 @@ public class GameSessionController {
     }
 
     @GetMapping("/{gameSessionId}")
-    public GameSession start(@CookieValue("userId") UUID userId, @PathVariable UUID gameSessionId) {
-        return gameSessionService.find(gameSessionId, userId);
+    public GameSessionView rounds(@CookieValue("userId") UUID userId, @PathVariable UUID gameSessionId) {
+        return gameSessionService.view(gameSessionId, userId);
     }
 
     @PostMapping("/start/{category}")
@@ -38,4 +41,7 @@ public class GameSessionController {
     public Map<String, Boolean> guess(@PathVariable UUID gameSessionId, @RequestBody GuessRequest guessRequest) {
         return Map.of("correct", gameSessionService.guess(gameSessionId, guessRequest.isHigher));
     }
+
+    public record GuessRequest(boolean isHigher) {}
+    public record GameSessionView(GameSession session, List<GameRoundView> rounds) {}
 }

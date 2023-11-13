@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.Timestamp;
 import java.time.Clock;
 import java.time.Instant;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -50,6 +51,15 @@ public class GameRoundRepository {
 
     public void setState(UUID roundId, GameRound.State state) {
         jdbcTemplate.update("update game_rounds set state = :state where id = :id", Map.of("id", roundId, "state", state.name()));
+    }
+
+    public List<GameRound> rounds(UUID gameSessionId) {
+        try {
+            return jdbcTemplate.query("select * from game_rounds where gameSessionId = :gameSessionId order by createdAt desc",
+                Map.of("gameSessionId", gameSessionId), GAME_ROUND_MAPPER);
+        } catch (EmptyResultDataAccessException e) {
+            return List.of();
+        }
     }
 }
 

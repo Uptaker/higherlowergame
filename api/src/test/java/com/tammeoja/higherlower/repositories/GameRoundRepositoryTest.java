@@ -47,6 +47,8 @@ class GameRoundRepositoryTest extends BaseRepositoryTest {
                 .state(PENDING)
                 .build()
         );
+
+        assertThat(repository.rounds(gameId)).containsExactly(result);
     }
 
 

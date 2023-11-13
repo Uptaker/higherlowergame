@@ -25,11 +25,11 @@ public class GameSessionService {
     private final MovieRepository movieRepository;
     private final GameRoundService gameRoundService;
 
-    public GameSessionController.GameSessionsView view(UUID gameSessionId, UUID userId) {
+    public GameSessionController.GameSessionView view(UUID gameSessionId, UUID userId) {
         var gameSession = gameSessionRepository.find(gameSessionId);
         if (!gameSession.userId().equals(userId)) throw new ResponseStatusException(FORBIDDEN);
         var rounds = gameRoundService.rounds(gameSessionId).stream().map(this::asView).toList();
-        return new GameSessionController.GameSessionsView(gameSession, rounds);
+        return new GameSessionController.GameSessionView(gameSession, rounds);
     }
 
     public GameSession find(UUID gameSessionId, UUID userId) {

@@ -21,6 +21,11 @@ export interface GameSession {
     finishedAt?: string
 }
 
+export interface GameSessionView {
+    session: GameSession
+    rounds: GameRoundView[]
+}
+
 export interface GameRoundView {
     id: string
     gameSessionId: string,

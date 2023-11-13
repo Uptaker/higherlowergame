@@ -7,6 +7,7 @@ import com.tammeoja.higherlower.repositories.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -44,4 +45,8 @@ public class GameRoundService {
 
     private void generateNext(UUID gameSessionId, GameRound gameRound) {
         gameRoundRepository.create(gameSessionId, gameRound.nextMovieId(), movieRepository.randomExcludingPlayedMoviesFor(gameSessionId, gameRound.nextMovieId()));   }
+
+    public List<GameRound> rounds(UUID gameSessionId) {
+        return gameRoundRepository.rounds(gameSessionId);
+    }
 }

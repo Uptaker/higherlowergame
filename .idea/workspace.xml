@@ -4,26 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="use plural name for REST controller">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameRound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameRoundView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameRoundRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameRoundService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/GameRoundRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameRoundServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" afterDir="false" />
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="user can see their played games and high-score">
+      <change afterPath="$PROJECT_DIR$/ui/src/components/MovieCard.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/controllers/GameSessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/controllers/GameSessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameRoundRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameRoundRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameRoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameRoundService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameSessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameSessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/db/game_sessions.sql" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/db/game_sessions.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/MovieRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/MovieRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameSessionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameSessionServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/App.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/GameRoundRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/GameRoundRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/api/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/api/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +49,7 @@
       <list>
         <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="MovieCard" />
       </list>
     </option>
   </component>
@@ -142,8 +133,8 @@
       <recent name="com.tammeoja.higherlower.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Unit tests">
-    <configuration name="GameSessionServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Spring Boot.HigherlowerApplication">
+    <configuration name="GameRoundRepositoryTest.save_and_load" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
@@ -156,7 +147,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest&quot;" />
+            <option value="&quot;com.tammeoja.higherlower.repositories.GameRoundRepositoryTest.save_and_load&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -167,7 +158,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameSessionServiceTest.guess_higher_incorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameSessionRepositoryTest.currentScore" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
@@ -180,7 +171,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.guess_higher_incorrect&quot;" />
+            <option value="&quot;com.tammeoja.higherlower.repositories.GameSessionRepositoryTest.currentScore&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -191,7 +182,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameSessionServiceTest.guess_lower_correct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameSessionServiceTest.findRound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
@@ -204,7 +195,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.guess_lower_correct&quot;" />
+            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.findRound&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -215,7 +206,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameSessionServiceTest.guess_lower_incorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameSessionServiceTest.start" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
@@ -228,7 +219,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.guess_lower_incorrect&quot;" />
+            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.start&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -329,21 +320,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.GameSessionServiceTest" />
-      <item itemvalue="Gradle.GameSessionServiceTest.guess_higher_incorrect" />
-      <item itemvalue="Gradle.GameSessionServiceTest.guess_lower_correct" />
-      <item itemvalue="Gradle.GameSessionServiceTest.guess_lower_incorrect" />
+      <item itemvalue="Gradle.GameRoundRepositoryTest.save_and_load" />
+      <item itemvalue="Gradle.GameSessionRepositoryTest.currentScore" />
+      <item itemvalue="Gradle.GameSessionServiceTest.findRound" />
+      <item itemvalue="Gradle.GameSessionServiceTest.start" />
       <item itemvalue="Gradle.MovieRepositoryTest.randomExcludingPlayedMoviesFor" />
       <item itemvalue="JUnit.Unit tests" />
       <item itemvalue="Spring Boot.HigherlowerApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GameRoundRepositoryTest.save_and_load" />
+        <item itemvalue="Gradle.GameSessionServiceTest.findRound" />
+        <item itemvalue="Gradle.GameSessionServiceTest.start" />
+        <item itemvalue="Gradle.GameSessionRepositoryTest.currentScore" />
         <item itemvalue="Gradle.MovieRepositoryTest.randomExcludingPlayedMoviesFor" />
-        <item itemvalue="Gradle.GameSessionServiceTest" />
-        <item itemvalue="Gradle.GameSessionServiceTest.guess_lower_incorrect" />
-        <item itemvalue="Gradle.GameSessionServiceTest.guess_higher_incorrect" />
-        <item itemvalue="Gradle.GameSessionServiceTest.guess_lower_correct" />
       </list>
     </recent_temporary>
   </component>
@@ -360,7 +351,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="42952000" />
+      <workItem from="1699807209368" duration="53025000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -474,7 +465,63 @@
       <option name="project" value="LOCAL" />
       <updated>1699904816150</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="try implementing higher/lower game">
+      <option name="closed" value="true" />
+      <created>1699908838184</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699908838184</updated>
+    </task>
+    <task id="LOCAL-00016" summary="use clock in UserService for test">
+      <option name="closed" value="true" />
+      <created>1699909012384</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699909012384</updated>
+    </task>
+    <task id="LOCAL-00017" summary="drop score in game_sessions table in favor of counting by wins">
+      <option name="closed" value="true" />
+      <created>1699910836268</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1699910836268</updated>
+    </task>
+    <task id="LOCAL-00018" summary="no need to use health checks for this app - needlessly spams logs">
+      <option name="closed" value="true" />
+      <created>1699911104300</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1699911104300</updated>
+    </task>
+    <task id="LOCAL-00019" summary="user can play the game">
+      <option name="closed" value="true" />
+      <created>1699915091103</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1699915091103</updated>
+    </task>
+    <task id="LOCAL-00020" summary="user can play the game">
+      <option name="closed" value="true" />
+      <created>1699915095835</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699915095835</updated>
+    </task>
+    <task id="LOCAL-00021" summary="user can see their played games and high-score">
+      <option name="closed" value="true" />
+      <created>1699917010560</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1699917010560</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +563,13 @@
     <MESSAGE value="system can check and set a user if there isn't any" />
     <MESSAGE value="do not expire the userId cookie" />
     <MESSAGE value="use plural name for REST controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="use plural name for REST controller" />
+    <MESSAGE value="try implementing higher/lower game" />
+    <MESSAGE value="use clock in UserService for test" />
+    <MESSAGE value="drop score in game_sessions table in favor of counting by wins" />
+    <MESSAGE value="no need to use health checks for this app - needlessly spams logs" />
+    <MESSAGE value="user can play the game" />
+    <MESSAGE value="user can see their played games and high-score" />
+    <option name="LAST_COMMIT_MESSAGE" value="user can see their played games and high-score" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
