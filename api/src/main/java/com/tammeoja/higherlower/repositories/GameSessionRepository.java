@@ -11,6 +11,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Map;
 import java.util.UUID;
 
+import static com.tammeoja.higherlower.entities.GameRound.State.WIN;
+
 @Repository
 @RequiredArgsConstructor
 public class GameSessionRepository {
@@ -25,10 +27,24 @@ public class GameSessionRepository {
 
     public GameSession find(UUID gameId) {
         try {
-            return jdbcTemplate.queryForObject("select * from game_sessions where id = :id", Map.of("id", gameId),
+            return jdbcTemplate.queryForObject("""
+                    select *, (select count(id) from game_rounds where gameSessionId = :id and state = :winState) as score
+                    from game_sessions where id = :id
+                    """, Map.of("id", gameId, "winState", WIN.name()),
                     DataClassRowMapper.newInstance(GameSession.class));
         } catch (EmptyResultDataAccessException e) {
             return null;
+        }
+    }
+
+    public Integer currentScore(UUID gameId) {
+        try {
+            return jdbcTemplate.queryForObject("""
+                    select count(id) from game_rounds where gameSessionId = :id and state = :winState
+                    """, Map.of("id", gameId, "winState", WIN.name()),
+                    Integer.class);
+        } catch (EmptyResultDataAccessException e) {
+            return 0;
         }
     }
 }

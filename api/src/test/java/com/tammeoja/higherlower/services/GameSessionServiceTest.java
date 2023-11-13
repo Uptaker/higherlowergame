@@ -6,6 +6,7 @@ import com.tammeoja.higherlower.entities.GameSession;
 import com.tammeoja.higherlower.entities.Movie;
 import com.tammeoja.higherlower.repositories.GameSessionRepository;
 import com.tammeoja.higherlower.repositories.MovieRepository;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -13,7 +14,7 @@ import org.junit.jupiter.params.provider.EnumSource;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-import static com.tammeoja.higherlower.entities.GameRound.State.PENDING;
+import static com.tammeoja.higherlower.entities.GameRound.State.*;
 import static com.tammeoja.higherlower.entities.GameSession.Category.RUNTIME;
 import static java.util.UUID.randomUUID;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -28,6 +29,11 @@ class GameSessionServiceTest {
 
     UUID gameId = randomUUID();
 
+    @AfterEach
+    void tearDown() {
+        verifyNoMoreInteractions(gameSessionRepository, movieRepository, gameRoundService);
+    }
+
     @Test
     void start() {
         var userId = randomUUID();
@@ -35,6 +41,7 @@ class GameSessionServiceTest {
 
         assertThat(service.start(userId, RUNTIME)).isEqualTo(gameId);
         verify(gameSessionRepository).create(userId, RUNTIME);
+        verify(gameRoundService).generate(gameId);
     }
 
     @Test
@@ -45,13 +52,16 @@ class GameSessionServiceTest {
 
         when(gameRoundService.findLast(any())).thenReturn(gameRound);
         when(movieRepository.find(any())).thenReturn(currentMovie).thenReturn(nextMovie);
+        when(gameSessionRepository.currentScore(any())).thenReturn(1);
 
         assertThat(service.findRound(gameId)).isEqualTo(
-                GameRoundView.builder().id(gameRound.id()).gameSessionId(gameId).current(currentMovie).next(nextMovie).state(PENDING).build()
+                GameRoundView.builder().id(gameRound.id()).score(1).gameSessionId(gameId).current(currentMovie).next(nextMovie).state(PENDING).build()
         );
 
         verify(movieRepository).find(gameRound.currentMovieId());
         verify(movieRepository).find(gameRound.nextMovieId());
+        verify(gameSessionRepository).currentScore(gameId);
+        verify(gameRoundService).findLast(gameId);
     }
 
     @ParameterizedTest
@@ -88,17 +98,20 @@ class GameSessionServiceTest {
 
     private void assertThatMovieCalculationsAre(boolean expectation, Movie currentMovie, Movie nextMovie, GameSession.Category category, boolean isHigher) {
         var gameSession = GameSession.builder().id(gameId).category(category).build();
-        var gameRound = GameRound.builder().id(randomUUID()).currentMovieId(randomUUID()).nextMovieId(randomUUID()).build();
+        var gameRound = GameRound.builder().gameSessionId(gameId).id(randomUUID()).currentMovieId(randomUUID()).nextMovieId(randomUUID()).build();
 
         when(gameSessionRepository.find(any())).thenReturn(gameSession);
         when(gameRoundService.findLast(any())).thenReturn(gameRound);
         when(movieRepository.find(any())).thenReturn(currentMovie).thenReturn(nextMovie);
+        when(gameSessionRepository.currentScore(any())).thenReturn(1);
 
         assertThat(service.guess(gameId, isHigher)).isEqualTo(expectation);
 
         verify(gameSessionRepository).find(gameId);
         verify(gameRoundService).findLast(gameId);
+        verify(gameRoundService).setState(expectation ? WIN : FAIL, gameRound.toViewBuilder().current(currentMovie).next(nextMovie).score(1).build());
         verify(movieRepository).find(gameRound.currentMovieId());
         verify(movieRepository).find(gameRound.nextMovieId());
+        verify(gameSessionRepository).currentScore(gameId);
     }
 }

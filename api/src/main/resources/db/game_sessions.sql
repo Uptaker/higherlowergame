@@ -19,3 +19,6 @@ create table game_rounds(
     state                text not null default 'PENDING',
     createdAt            timestamptz not null default current_timestamp
 );
+
+--changeset higherlower:game_sessions-drop-score
+alter table game_sessions drop score;

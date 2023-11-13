@@ -12,6 +12,7 @@ public record GameRoundView(
     Movie current,
     Movie next,
     GameRound.State state,
+    Integer score,
     Instant createdAt
 ) {
 }

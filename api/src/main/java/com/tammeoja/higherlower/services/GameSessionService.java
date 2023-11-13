@@ -35,6 +35,7 @@ public class GameSessionService {
         return gameRound.toViewBuilder()
             .current(movieRepository.find(gameRound.currentMovieId()))
             .next(movieRepository.find(gameRound.nextMovieId()))
+            .score(gameSessionRepository.currentScore(gameRound.gameSessionId()))
             .build();
     }
 
