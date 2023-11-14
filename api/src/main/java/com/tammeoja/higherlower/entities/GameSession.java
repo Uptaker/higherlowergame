@@ -11,6 +11,7 @@ public record GameSession(
    UUID userId,
    Category category,
    int score,
+   boolean hard,
    Instant finishedAt,
    Instant createdAt
 ) {

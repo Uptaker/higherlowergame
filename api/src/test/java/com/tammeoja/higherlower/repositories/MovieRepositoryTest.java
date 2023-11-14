@@ -38,16 +38,6 @@ class MovieRepositoryTest extends BaseRepositoryTest {
         assertThat(randomMovie).isNotNull();
     }
 
-    @Test
-    void randomExcludingMovie() {
-        var randomExcludedMovie = repository.random();
-
-        for (int i = 0; i < 100; i++) {
-            var randomMovieId = repository.randomExcludingMovie(randomExcludedMovie);
-            assertThat(randomMovieId).isNotNull();
-            assertThat(randomMovieId).isNotEqualTo(randomExcludedMovie);
-        }
-    }
 
     @Test
     void findMoviesByGameSession() {
@@ -69,8 +59,8 @@ class MovieRepositoryTest extends BaseRepositoryTest {
         assertThat(pickedMovies).doesNotContain(repository.findIdsByGameSession(gameSessionId));
     }
 
-    private UUID generateAndAssertHasMovies() {
-        var gameSessionId = gameSessionService.start(randomUUID(), REVENUE);
+    private UUID generateAndAssertHasMovies(boolean hard) {
+        var gameSessionId = gameSessionService.start(randomUUID(), REVENUE, hard);
 
         for (int i = 0; i < 20; i++) {
             gameRoundService.generate(gameSessionId);
@@ -80,5 +70,9 @@ class MovieRepositoryTest extends BaseRepositoryTest {
         assertThat(movieIds).hasSize(20);
         assertThat(movieIds.get(0)).isNotEqualTo(movieIds.get(10));
         return gameSessionId;
+    }
+
+    private UUID generateAndAssertHasMovies() {
+        return generateAndAssertHasMovies(false);
     }
 }

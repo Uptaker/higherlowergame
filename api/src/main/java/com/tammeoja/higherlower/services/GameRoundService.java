@@ -28,7 +28,7 @@ public class GameRoundService {
 
     private void generateFirstRound(UUID gameSessionId) {
         var currentMovieId = movieRepository.random();
-        var nextMovieId = movieRepository.randomExcludingMovie(currentMovieId);
+        var nextMovieId = movieRepository.randomExcludingPlayedMoviesFor(gameSessionId, currentMovieId);
         gameRoundRepository.create(gameSessionId, currentMovieId, nextMovieId);
     }
 

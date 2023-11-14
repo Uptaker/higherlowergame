@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="user can see scores by category">
-      <change afterPath="$PROJECT_DIR$/ui/src/components/LogoSlogan.svelte" afterDir="false" />
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="ui changes: use common logo/slogan and animate on right answer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/components/MovieCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/MovieCard.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/layout/MainPageLayout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/layout/MainPageLayout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/controllers/GameSessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/controllers/GameSessionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/entities/GameSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameRoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameRoundService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameSessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameSessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/db/game_sessions.sql" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/db/game_sessions.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/MovieRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/MovieRepositoryTest.java" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -350,7 +353,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="68751000" />
+      <workItem from="1699807209368" duration="69839000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -600,7 +603,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699985814876</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="ui changes: use common logo/slogan and animate on right answer">
+      <option name="closed" value="true" />
+      <created>1699988436174</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1699988436174</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +641,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add assignment README" />
     <MESSAGE value="updated idea files" />
     <MESSAGE value="add IDEA run configuration for starting UI" />
     <MESSAGE value="setup repository tests &amp; use MovieRepository as verification" />
@@ -655,7 +665,8 @@
     <MESSAGE value="mark game as finished when player guesses incorrectly" />
     <MESSAGE value="adjust card to be more compact" />
     <MESSAGE value="user can see scores by category" />
-    <option name="LAST_COMMIT_MESSAGE" value="user can see scores by category" />
+    <MESSAGE value="ui changes: use common logo/slogan and animate on right answer" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui changes: use common logo/slogan and animate on right answer" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

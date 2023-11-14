@@ -55,14 +55,14 @@ class GameRoundServiceTest {
         var nextMovieId = randomUUID();
 
         when(movieRepository.random()).thenReturn(currentMovieId);
-        when(movieRepository.randomExcludingMovie(any())).thenReturn(nextMovieId);
+        when(movieRepository.randomExcludingPlayedMoviesFor(any(), any())).thenReturn(nextMovieId);
         when(gameRoundRepository.findLast(any())).thenReturn(null);
 
         service.generate(gameSessionId);
 
         verify(gameRoundRepository).findLast(gameSessionId);
         verify(movieRepository).random();
-        verify(movieRepository).randomExcludingMovie(currentMovieId);
+        verify(movieRepository).randomExcludingPlayedMoviesFor(gameSessionId, currentMovieId);
         verify(gameRoundRepository).create(gameSessionId, currentMovieId, nextMovieId);
     }
 

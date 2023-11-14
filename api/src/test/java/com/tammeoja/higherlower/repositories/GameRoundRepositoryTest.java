@@ -27,13 +27,13 @@ class GameRoundRepositoryTest extends BaseRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        gameId = gameSessionRepository.create(UUID.randomUUID(), POPULARITY);
+        gameId = gameSessionRepository.create(UUID.randomUUID(), POPULARITY, false);
     }
 
     @Test
     void save_and_load() {
         var randomMovie = movieRepository.random();
-        var randomMovie2 = movieRepository.randomExcludingMovie(randomMovie);
+        var randomMovie2 = movieRepository.randomExcludingPlayedMoviesFor(gameId, randomMovie);
 
         repository.create(gameId, randomMovie, randomMovie2);
         var result = repository.findLast(gameId);
@@ -55,7 +55,7 @@ class GameRoundRepositoryTest extends BaseRepositoryTest {
     @Test
     void setState() {
         var randomMovie = movieRepository.random();
-        var randomMovie2 = movieRepository.randomExcludingMovie(randomMovie);
+        var randomMovie2 = movieRepository.randomExcludingPlayedMoviesFor(gameId, randomMovie);
 
         var roundId = repository.create(gameId, randomMovie, randomMovie2);
         assertThat(repository.findLast(gameId).state()).isEqualTo(PENDING);

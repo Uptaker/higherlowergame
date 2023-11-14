@@ -38,10 +38,10 @@ class GameSessionServiceTest {
     @Test
     void start() {
         var userId = randomUUID();
-        when(gameSessionRepository.create(any(), any())).thenReturn(gameId);
+        when(gameSessionRepository.create(any(), any(), anyBoolean())).thenReturn(gameId);
 
-        assertThat(service.start(userId, RUNTIME)).isEqualTo(gameId);
-        verify(gameSessionRepository).create(userId, RUNTIME);
+        assertThat(service.start(userId, RUNTIME, false)).isEqualTo(gameId);
+        verify(gameSessionRepository).create(userId, RUNTIME, false);
         verify(gameRoundService).generate(gameId);
     }
 

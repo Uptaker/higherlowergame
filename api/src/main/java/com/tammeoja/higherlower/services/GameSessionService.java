@@ -43,8 +43,8 @@ public class GameSessionService {
         return gameSession;
     }
 
-    public UUID start(UUID userId, GameSession.Category category) {
-        var gameSessionId = gameSessionRepository.create(userId, category);
+    public UUID start(UUID userId, GameSession.Category category, boolean hardMode) {
+        var gameSessionId = gameSessionRepository.create(userId, category, hardMode);
         gameRoundService.generate(gameSessionId);
         return gameSessionId;
     }

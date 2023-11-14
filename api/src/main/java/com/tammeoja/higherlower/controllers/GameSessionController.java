@@ -33,8 +33,8 @@ public class GameSessionController {
     }
 
     @PostMapping("/start/{category}")
-    public UUID start(@CookieValue("userId") UUID userId, @PathVariable Category category) {
-        return gameSessionService.start(userId, category);
+    public UUID start(@CookieValue("userId") UUID userId, @PathVariable Category category, @RequestParam(required = false) boolean hardMode) {
+        return gameSessionService.start(userId, category, hardMode);
     }
 
     @GetMapping("/{gameSessionId}/round")

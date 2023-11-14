@@ -27,11 +27,11 @@ class GameSessionRepositoryTest extends BaseRepositoryTest {
 
     @Test
     void saveAndLoad() {
-        var gameId = repository.create(userId, REVENUE);
+        var gameId = repository.create(userId, REVENUE, true);
 
         var result = repository.find(gameId);
         assertThat(result).isEqualTo(
-          GameSession.builder().id(gameId).userId(userId).score(0).createdAt(result.createdAt()).finishedAt(null).category(REVENUE).build()
+          GameSession.builder().id(gameId).userId(userId).score(0).createdAt(result.createdAt()).finishedAt(null).category(REVENUE).hard(true).build()
         );
     }
 
@@ -98,7 +98,7 @@ class GameSessionRepositoryTest extends BaseRepositoryTest {
     }
 
     private UUID createGameWithCategory(GameSession.Category category) {
-        return repository.create(userId, category);
+        return repository.create(userId, category, false);
     }
 
     private void generateAndWinRound(UUID gameId) {

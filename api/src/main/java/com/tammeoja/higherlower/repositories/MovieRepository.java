@@ -100,16 +100,4 @@ public class MovieRepository {
             "voteAverageCategory", VOTE_AVERAGE.name()
         ), UUID.class);
     }
-
-    public UUID randomExcludingMovie(UUID movieId) {
-        return jdbcTemplate.queryForObject("""
-            with excludedMovie as (select * from movies where id = :movieId)
-            select id from movies
-            where id not in (:movieId) and revenue != (select excludedMovie.revenue from excludedMovie)
-            and vote_count != (select vote_count from excludedMovie)
-            and popularity != (select excludedMovie.popularity from excludedMovie)
-            and runtime != (select excludedMovie.runtime from excludedMovie)
-            order by random() limit 1
-            """, Map.of("movieId", movieId), UUID.class);
-    }
 }

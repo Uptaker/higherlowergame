@@ -21,10 +21,10 @@ import static com.tammeoja.higherlower.entities.GameSession.Category.*;
 public class GameSessionRepository {
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
-    public UUID create(UUID userId, Category category) {
+    public UUID create(UUID userId, Category category, boolean hardMode) {
         UUID gameId = UUID.randomUUID();
-        jdbcTemplate.update("insert into game_sessions (id, userId, category) values (:id, :userId, :category)",
-          Map.of("id", gameId, "userId", userId, "category", category.name()));
+        jdbcTemplate.update("insert into game_sessions (id, userId, category, hard) values (:id, :userId, :category, :hard)",
+          Map.of("id", gameId, "userId", userId, "category", category.name(), "hard", hardMode));
         return gameId;
     }
 

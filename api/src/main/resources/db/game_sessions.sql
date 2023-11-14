@@ -22,3 +22,6 @@ create table game_rounds(
 
 --changeset higherlower:game_sessions-drop-score
 alter table game_sessions drop score;
+
+--changeset higherlower:game_sessions-hard-difficulty
+alter table game_sessions add column hard boolean not null default false;

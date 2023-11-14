@@ -17,10 +17,10 @@ class GameSessionControllerTest {
     void start() {
         var gameId = randomUUID();
         var userId = randomUUID();
-        when(gameSessionService.start(any(), any())).thenReturn(gameId);
+        when(gameSessionService.start(any(), any(), anyBoolean())).thenReturn(gameId);
 
-        assertThat(controller.start(userId, RUNTIME)).isEqualTo(gameId);
+        assertThat(controller.start(userId, RUNTIME, true)).isEqualTo(gameId);
 
-        verify(gameSessionService).start(userId, RUNTIME);
+        verify(gameSessionService).start(userId, RUNTIME, true);
     }
 }
