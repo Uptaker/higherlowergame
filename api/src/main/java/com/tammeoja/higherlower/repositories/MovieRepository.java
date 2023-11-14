@@ -80,24 +80,53 @@ public class MovieRepository {
     }
 
     public UUID randomExcludingPlayedMoviesFor(UUID gameSessionId, UUID currentMovieId) {
-        return jdbcTemplate.queryForObject("""
-            select id from (with currentMovie as (select * from movies where id = :currentMovieId)
-            select m.id, category as category from movies m
-            cross join (select category from game_sessions where id = :gameId)
-            where id not in (select distinct currentMovieId from game_rounds where gameSessionId = :gameId)
-            and id not in (select distinct nextMovieId from game_rounds where gameSessionId = :gameId)
-            and (case when category = :popularityCategory then m.popularity != (select popularity from currentMovie) else true end)
-            and (case when category = :runtimeCategory then m.runtime != (select runtime from currentMovie) else true end)
-            and (case when category = :revenueCategory then m.revenue != (select revenue from currentMovie) else true end)
-            and (case when category = :voteAverageCategory then m.vote_average != (select vote_average from currentMovie) else true end)
-            order by random() limit 1) randomId
-            """, Map.of(
-            "gameId", gameSessionId,
-            "currentMovieId", currentMovieId,
-            "popularityCategory", POPULARITY.name(),
-            "runtimeCategory", RUNTIME.name(),
-            "revenueCategory", REVENUE.name(),
-            "voteAverageCategory", VOTE_AVERAGE.name()
+        String query = """
+        with currentMovie as (select * from movies where id = :currentMovieId),
+        gameCategories as (select category from game_sessions where id = :gameId)
+        select coalesce(id, (select fb.id from movies fb
+            cross join currentMovie cm
+            cross join gameCategories gc
+            where fb.id != :currentMovieId
+            and fb.id not in (select distinct currentMovieId from game_rounds where gameSessionId = :gameId)
+            and fb.id not in (select distinct nextMovieId from game_rounds where gameSessionId = :gameId)
+            and (
+                    (gc.category = :popularity and fb.popularity != cm.popularity and fb.popularity != 0)
+                    or (gc.category = :runtime and fb.runtime != cm.runtime and fb.runtime != 0)
+                    or (gc.category = :revenue and fb.revenue != cm.revenue and fb.revenue != 0)
+                    or (gc.category = :voteAverage and fb.vote_average != cm.vote_average and fb.vote_average != 0)
+            )
+            order by random() limit 1)) from (
+            select m.id from movies m
+            cross join currentMovie cm
+            cross join gameCategories gc
+            where m.id <> cm.id
+            and m.id not in (select distinct currentMovieId from game_rounds where gameSessionId = :gameId)
+            and m.id not in (select distinct nextMovieId from game_rounds where gameSessionId = :gameId)
+            and (
+                (exists (select 1 from game_sessions where id = :gameId and hard = true) and (
+                    (gc.category = :popularity and abs(m.popularity - cm.popularity) <= 15 and m.popularity != 0)
+                    or (gc.category = :runtime and abs(m.runtime - cm.runtime) <= 15.0 and m.runtime != 0)
+                    or (gc.category = :revenue and abs(m.revenue - cm.revenue) <= 2000000 and m.revenue != 0)
+                    or (gc.category = :voteAverage and abs(m.vote_average - cm.vote_average) <= 0.5 and m.vote_average != 0)
+                ))
+                or (not exists (select 1 from game_sessions where id = :gameId and hard = true) and (
+                    (gc.category = :popularity and m.popularity != cm.popularity and m.popularity != 0)
+                    or (gc.category = :runtime and m.runtime != cm.runtime and m.runtime != 0)
+                    or (gc.category = :revenue and m.revenue != cm.revenue and m.revenue != 0)
+                    or (gc.category = :voteAverage and m.vote_average != cm.vote_average and m.vote_average != 0)
+                ))
+            )
+            order by random() limit 1
+        ) randomId
+    """;
+
+        return jdbcTemplate.queryForObject(query, Map.of(
+                "gameId", gameSessionId,
+                "currentMovieId", currentMovieId,
+                "popularity", POPULARITY.name(),
+                "runtime", RUNTIME.name(),
+                "revenue", REVENUE.name(),
+                "voteAverage", VOTE_AVERAGE.name()
         ), UUID.class);
     }
 }

@@ -8,15 +8,18 @@
     import Card from "src/components/Card.svelte";
     import {humanReadableCategories} from "src/humanReadableUtils";
     import ScoresCard from "src/components/ScoresCard.svelte";
+    import CheckboxField from "src/forms/CheckboxField.svelte";
 
     let gameSessions: GameSession[]
+    let hardMode = false
 
     async function load() {
         gameSessions = await api.get('game-sessions')
     }
 
     async function pickCategory(category: Category) {
-        const gameId = await api.post('game-sessions/start/' + category)
+        const query = ('game-sessions/start/' + category).concat(hardMode ? '?hardMode=true' : '')
+        const gameId = await api.post(query)
         navigate('/' + gameId)
     }
 
@@ -30,6 +33,7 @@
                 <Button on:click={() => pickCategory(category)}>{humanReadableCategories[category]}</Button>
             {/each}
         </div>
+        <CheckboxField bind:checked={hardMode} label="Hard mode"/>
     </div>
 
 

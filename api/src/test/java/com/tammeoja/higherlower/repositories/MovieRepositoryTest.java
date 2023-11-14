@@ -59,6 +59,21 @@ class MovieRepositoryTest extends BaseRepositoryTest {
         assertThat(pickedMovies).doesNotContain(repository.findIdsByGameSession(gameSessionId));
     }
 
+    @Test
+    void randomExcludingPlayedMoviesFor_hardMode() {
+        var gameSessionId = generateAndAssertHasMovies(true);
+        var lastRound = gameRoundService.findLast(gameSessionId);
+
+        var pickedMovies = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            var pickedMovieId = repository.randomExcludingPlayedMoviesFor(gameSessionId, lastRound.nextMovieId());
+            assertThat(repository.find(pickedMovieId).revenue()).isNotEqualTo(repository.find(lastRound.nextMovieId()).revenue());
+            pickedMovies.add(pickedMovieId);
+        }
+
+        assertThat(pickedMovies).doesNotContain(repository.findIdsByGameSession(gameSessionId));
+    }
+
     private UUID generateAndAssertHasMovies(boolean hard) {
         var gameSessionId = gameSessionService.start(randomUUID(), REVENUE, hard);
 
