@@ -104,10 +104,10 @@ public class MovieRepository {
             and m.id not in (select distinct nextMovieId from game_rounds where gameSessionId = :gameId)
             and (
                 (exists (select 1 from game_sessions where id = :gameId and hard = true) and (
-                    (gc.category = :popularity and abs(m.popularity - cm.popularity) <= 15 and m.popularity != 0)
-                    or (gc.category = :runtime and abs(m.runtime - cm.runtime) <= 15.0 and m.runtime != 0)
-                    or (gc.category = :revenue and abs(m.revenue - cm.revenue) <= 2000000 and m.revenue != 0)
-                    or (gc.category = :voteAverage and abs(m.vote_average - cm.vote_average) <= 0.5 and m.vote_average != 0)
+                    (gc.category = :popularity and m.popularity != cm.popularity and abs(m.popularity - cm.popularity) <= 15 and m.popularity != 0)
+                    or (gc.category = :runtime and m.runtime != cm.runtime and abs(m.runtime - cm.runtime) <= 15.0 and m.runtime != 0)
+                    or (gc.category = :revenue and m.revenue != cm.revenue and m.revenue != 0 and abs(m.revenue - cm.revenue) <= 2000000 and m.revenue != 0)
+                    or (gc.category = :voteAverage and m.vote_average != cm.vote_average and abs(m.vote_average - cm.vote_average) <= 0.5 and m.vote_average != 0)
                 ))
                 or (not exists (select 1 from game_sessions where id = :gameId and hard = true) and (
                     (gc.category = :popularity and m.popularity != cm.popularity and m.popularity != 0)

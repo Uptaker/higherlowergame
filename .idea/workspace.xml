@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="implement hard mode">
-      <change beforePath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" afterDir="false" />
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="final prep: configure outputted jar and setup docker to use different default ports">
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +127,7 @@
       <recent name="com.tammeoja.higherlower.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.HigherlowerApplication">
+  <component name="RunManager" selected="JUnit.Unit tests">
     <configuration name="GameSessionControllerTest.start" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -345,7 +345,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="77222000" />
+      <workItem from="1699807209368" duration="81012000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -619,7 +619,31 @@
       <option name="project" value="LOCAL" />
       <updated>1699996846716</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="show the actual category values after each round">
+      <option name="closed" value="true" />
+      <created>1699996884001</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1699996884001</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fix question movie order">
+      <option name="closed" value="true" />
+      <created>1699998153760</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1699998153760</updated>
+    </task>
+    <task id="LOCAL-00037" summary="final prep: configure outputted jar and setup docker to use different default ports">
+      <option name="closed" value="true" />
+      <created>1699998976043</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1699998976043</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,9 +673,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="setup repository tests &amp; use MovieRepository as verification" />
-    <MESSAGE value="user can request a game session of any category" />
-    <MESSAGE value="add test for GameSessionController &amp; passthrough service" />
     <MESSAGE value="system can check and set a user if there isn't any" />
     <MESSAGE value="do not expire the userId cookie" />
     <MESSAGE value="use plural name for REST controller" />
@@ -674,7 +695,10 @@
     <MESSAGE value="ui changes: use common logo/slogan and animate on right answer" />
     <MESSAGE value="add hardmode to game session as possible parameter, remove redundant randomExcludingMovie() function that could be replaced by an existing function for later hard mode implementation" />
     <MESSAGE value="implement hard mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement hard mode" />
+    <MESSAGE value="show the actual category values after each round" />
+    <MESSAGE value="fix question movie order" />
+    <MESSAGE value="final prep: configure outputted jar and setup docker to use different default ports" />
+    <option name="LAST_COMMIT_MESSAGE" value="final prep: configure outputted jar and setup docker to use different default ports" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
