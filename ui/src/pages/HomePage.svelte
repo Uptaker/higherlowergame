@@ -37,9 +37,12 @@
     {#if gameSessions?.length}
         <h2>My games</h2>
         <h3>Highest score: <b>{highestScore}</b></h3>
-        <div class="flex flex-col gap-2 mb-3">
+        <div class="flex flex-col gap-2 mb-10">
         {#each gameSessions as game}
-            <Card title="Score: {game.score}" subtitle={new Date(game.createdAt).toLocaleString()} padding="px-6"/>
+            <div on:click={() => navigate('/' + game.id)}>
+                <Card title="Score: {game.score}" subtitle={new Date(game.createdAt).toLocaleString()} padding="px-6"
+                      class="hover:bg-slate-50 hover:cursor-pointer"/>
+            </div>
         {/each}
         </div>
     {/if}
