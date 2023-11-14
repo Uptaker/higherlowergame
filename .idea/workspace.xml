@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="style changes: icons &amp; game session layout">
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="mark game as finished when player guesses incorrectly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/GameSessionRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/GameSessionRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameRoundServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameRoundServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/Card.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/Card.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +127,7 @@
       <recent name="com.tammeoja.higherlower.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GameSessionRepositoryTest.markAsFinished">
+  <component name="RunManager" selected="Spring Boot.HigherlowerApplication">
     <configuration name="GameRoundRepositoryTest.save_and_load" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -346,7 +345,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="58494000" />
+      <workItem from="1699807209368" duration="60269000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -572,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699977687324</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="mark game as finished when player guesses incorrectly">
+      <option name="closed" value="true" />
+      <created>1699978446612</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1699978446612</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +609,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add variabes to be re" />
     <MESSAGE value="add minimal Vite/TS/Tailwind UI setup" />
     <MESSAGE value="add envs for docker-compose to read" />
     <MESSAGE value="add assignment README" />
@@ -627,7 +633,8 @@
     <MESSAGE value="add a super sneaky Github link that nobody shall ever click on, never-ever ever" />
     <MESSAGE value="IDEA workspace" />
     <MESSAGE value="style changes: icons &amp; game session layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="style changes: icons &amp; game session layout" />
+    <MESSAGE value="mark game as finished when player guesses incorrectly" />
+    <option name="LAST_COMMIT_MESSAGE" value="mark game as finished when player guesses incorrectly" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
