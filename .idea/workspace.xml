@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="add hardmode to game session as possible parameter, remove redundant randomExcludingMovie() function that could be replaced by an existing function for later hard mode implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/MovieRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/MovieRepositoryTest.java" afterDir="false" />
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="implement hard mode">
       <change beforePath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -349,7 +345,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="76784000" />
+      <workItem from="1699807209368" duration="77222000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -615,7 +611,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699989982200</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="implement hard mode">
+      <option name="closed" value="true" />
+      <created>1699996846716</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1699996846716</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add IDEA run configuration for starting UI" />
     <MESSAGE value="setup repository tests &amp; use MovieRepository as verification" />
     <MESSAGE value="user can request a game session of any category" />
     <MESSAGE value="add test for GameSessionController &amp; passthrough service" />
@@ -670,7 +673,8 @@
     <MESSAGE value="user can see scores by category" />
     <MESSAGE value="ui changes: use common logo/slogan and animate on right answer" />
     <MESSAGE value="add hardmode to game session as possible parameter, remove redundant randomExcludingMovie() function that could be replaced by an existing function for later hard mode implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add hardmode to game session as possible parameter, remove redundant randomExcludingMovie() function that could be replaced by an existing function for later hard mode implementation" />
+    <MESSAGE value="implement hard mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement hard mode" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

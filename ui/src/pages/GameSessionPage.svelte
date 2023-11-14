@@ -1,7 +1,7 @@
 <script lang="ts">
     import MainPageLayout from 'src/layout/MainPageLayout.svelte'
-    import type {GameRoundView, GameSession} from "src/api/types";
-    import {GameRoundState} from "src/api/types";
+    import type {GameRoundView, GameSession, Movie} from "src/api/types";
+    import {Category, GameRoundState} from "src/api/types";
     import Button from "src/components/Button.svelte";
     import api from "src/api/api";
     import {showToast} from "src/stores/toasts";
@@ -9,13 +9,14 @@
     import Card from "src/components/Card.svelte";
     import MovieCard from "src/components/MovieCard.svelte";
     import {humanReadableGameCategoryQuestions} from "src/humanReadableUtils";
-    import {fly} from 'svelte/transition'
+    import {fade, fly, type TransitionConfig} from 'svelte/transition'
     import type {FlyParams} from "svelte/types/runtime/transition";
 
     export let gameSessionId: string
     let session: GameSession
     let gameRound: GameRoundView
     let rounds: GameRoundView[]
+    let transitioning = false
 
     async function load() {
         await api.get<{ session: GameSession, rounds: GameRoundView[] }>(`game-sessions/${gameSessionId}`).then(result => {
@@ -34,8 +35,9 @@
     async function choose(isHigher: boolean) {
         const correct = (await api.post(`game-sessions/${gameSessionId}/guess`, {isHigher}) as { correct: boolean }).correct
         if (correct) {
+            transitioning = true
             showToast('Hurrah! Correct!') &&
-            await loadRound()
+            setTimeout(() => loadRound().then(() => transitioning = false), 3000)
         } else await load()
     }
 
@@ -43,10 +45,20 @@
         navigate('/')
     }
 
-    function withTransition(node: Element, options: FlyParams | undefined) {
-        return gameEnded ? () => {} : fly(node, options);
+    function withTransition(node: Element, options: FlyParams | undefined): TransitionConfig {
+        return gameEnded ? (() => {}) as TransitionConfig : fly(node, options);
     }
 
+    function getCategoryValue(movie: Movie) {
+        switch (session.category) {
+            case Category.VOTE_AVERAGE: return movie.voteAverage
+            case Category.POPULARITY: return movie.popularity
+            case Category.RUNTIME: return movie.runtime
+            case Category.REVENUE: return movie.revenue
+        }
+    }
+
+    $: showResults = gameEnded || transitioning
     $: load()
 </script>
 
@@ -68,6 +80,12 @@
                 <MovieCard movie={gameRound.next}/>
             </div>
         </div>
+            {#if showResults}
+                <div class="grid grid-cols-2 justify-center items-center text-center" in:fade>
+                    <div class="text-2xl">{getCategoryValue(gameRound.current)}</div>
+                    <div class="text-2xl">{getCategoryValue(gameRound.next)}</div>
+                </div>
+            {/if}
         {/key}
         {#if gameEnded && rounds.length}
             {@const score = gameRound.score}
