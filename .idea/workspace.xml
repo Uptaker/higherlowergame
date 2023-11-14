@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="small style improvements">
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="IDEA workspace">
+      <change afterPath="$PROJECT_DIR$/ui/src/icons/arrow-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/icons/arrow-up.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameRoundServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameRoundServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/components/MovieCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/MovieCard.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/humanReadableUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/humanReadableUtils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/layout/MainPageLayout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/layout/MainPageLayout.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/GameSessionPage.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +132,7 @@
       <recent name="com.tammeoja.higherlower.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.HigherlowerApplication">
+  <component name="RunManager" selected="JUnit.Unit tests">
     <configuration name="GameRoundRepositoryTest.save_and_load" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -346,7 +350,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="54305000" />
+      <workItem from="1699807209368" duration="57828000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -540,7 +544,31 @@
       <option name="project" value="LOCAL" />
       <updated>1699919447782</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="user can go to previous game sessions">
+      <option name="closed" value="true" />
+      <created>1699920223891</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1699920223891</updated>
+    </task>
+    <task id="LOCAL-00026" summary="add a super sneaky Github link that nobody shall ever click on, never-ever ever">
+      <option name="closed" value="true" />
+      <created>1699920299348</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1699920299348</updated>
+    </task>
+    <task id="LOCAL-00027" summary="IDEA workspace">
+      <option name="closed" value="true" />
+      <created>1699920312495</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1699920312495</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +619,10 @@
     <MESSAGE value="user can see see the session rounds after the game ends" />
     <MESSAGE value="user can see more information about the movie when deciding" />
     <MESSAGE value="small style improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="small style improvements" />
+    <MESSAGE value="user can go to previous game sessions" />
+    <MESSAGE value="add a super sneaky Github link that nobody shall ever click on, never-ever ever" />
+    <MESSAGE value="IDEA workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="IDEA workspace" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

@@ -13,6 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+// TODO
+// button icons (up, down)
+// finishedAt, show if homepage if unfinished
+// separate highscore for each gamemode + best highschore
+// hardmode
+// deploy to higherlower.tammeoja.com
+
 class GameRoundServiceTest {
     MovieRepository movieRepository = mock();
     GameRoundRepository gameRoundRepository = mock();

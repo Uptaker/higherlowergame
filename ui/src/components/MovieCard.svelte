@@ -11,6 +11,6 @@
         {#if movie.tagline}
             <p class="font-semibold">{movie.tagline}</p>
         {/if}
-        <p>{movie.overview ?? ''}<p>
+        <p class="text-justify">{movie.overview ?? ''}<p>
     </div>
 </div>
