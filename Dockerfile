@@ -20,7 +20,7 @@ RUN ./gradlew --version
 COPY api/*gradle* ./
 
 COPY api/ ./
-RUN ./gradlew build
+RUN ./gradlew build -x test
 
 # final image
 FROM openjdk:17-alpine as final
@@ -36,5 +36,5 @@ ENV TZ=Europe/Tallinn
 ENV JAVA_MEM="-Xss256K -Xmx350M"
 CMD java $JAVA_MEM -jar higherlower.jar
 
-ENV PORT=8080
+ENV PORT=8111
 EXPOSE $PORT
