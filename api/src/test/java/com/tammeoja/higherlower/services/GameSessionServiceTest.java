@@ -109,9 +109,10 @@ class GameSessionServiceTest {
 
         verify(gameSessionRepository).find(gameId);
         verify(gameRoundService).findLast(gameId);
-        verify(gameRoundService).setState(expectation ? WIN : FAIL, gameRound.toViewBuilder().current(currentMovie).next(nextMovie).score(1).build());
         verify(movieRepository).find(gameRound.currentMovieId());
         verify(movieRepository).find(gameRound.nextMovieId());
         verify(gameSessionRepository).currentScore(gameId);
+        verify(gameRoundService).setState(expectation ? WIN : FAIL, gameRound.toViewBuilder().current(currentMovie).next(nextMovie).score(1).build());
+        if (!expectation) verify(gameSessionRepository).markAsFinished(gameId);
     }
 }

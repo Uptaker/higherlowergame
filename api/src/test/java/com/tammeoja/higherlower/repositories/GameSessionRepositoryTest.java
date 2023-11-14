@@ -7,6 +7,8 @@ import com.tammeoja.higherlower.utils.BaseRepositoryTest;
 import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static com.tammeoja.higherlower.entities.GameRound.State.FAIL;
 import static com.tammeoja.higherlower.entities.GameRound.State.WIN;
 import static com.tammeoja.higherlower.entities.GameSession.Category.REVENUE;
@@ -32,6 +34,15 @@ class GameSessionRepositoryTest extends BaseRepositoryTest {
     }
 
     @Test
+    void markAsFinished() {
+        var gameId = createGame();
+
+        assertThat(repository.find(gameId).finishedAt()).isNull();
+        repository.markAsFinished(gameId);
+        assertThat(repository.find(gameId).finishedAt()).isNotNull();
+    }
+
+    @Test
     void currentScore() {
         var userId = randomUUID();
         var gameId = repository.create(userId, REVENUE);
@@ -52,5 +63,10 @@ class GameSessionRepositoryTest extends BaseRepositoryTest {
         lastRound = gameRoundService.findLast(gameId);
         gameRoundService.setState(FAIL, GameRoundView.builder().id(lastRound.id()).gameSessionId(gameId).build());
         assertThat(repository.currentScore(gameId)).isEqualTo(2);
+    }
+
+    private UUID createGame() {
+        var userId = randomUUID();
+        return repository.create(userId, REVENUE);
     }
 }

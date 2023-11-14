@@ -60,5 +60,9 @@ public class GameSessionRepository {
             return List.of();
         }
     }
+
+    public void markAsFinished(UUID gameSessionId) {
+        jdbcTemplate.update(" update game_sessions set finishedAt = current_timestamp where id = :id", Map.of("id", gameSessionId));
+    }
 }
 

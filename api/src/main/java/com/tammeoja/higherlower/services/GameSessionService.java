@@ -61,6 +61,7 @@ public class GameSessionService {
         var lastRound = findLastRoundAsView(gameSessionId);
         var isCorrect = calculateAnswer(isHigher, lastRound, gameSession.category());
         gameRoundService.setState(isCorrect ? WIN : FAIL, lastRound);
+        if (!isCorrect) gameSessionRepository.markAsFinished(gameSessionId);
         return isCorrect;
     }
 
