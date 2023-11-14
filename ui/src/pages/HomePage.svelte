@@ -25,7 +25,6 @@
 
 <MainPageLayout>
     <div class="flex flex-col items-center gap-10 mt-12 mb-40">
-        <h1>Higher lower</h1>
         <div class="flex gap-4">
             {#each Object.values(Category) as category}
                 <Button on:click={() => pickCategory(category)}>{humanReadableCategories[category]}</Button>
