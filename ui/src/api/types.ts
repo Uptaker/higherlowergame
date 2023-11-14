@@ -18,6 +18,7 @@ export interface GameSession {
     userId: string,
     category: Category
     createdAt: string
+    hard: boolean
     finishedAt?: string
 }
 

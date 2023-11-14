@@ -127,7 +127,7 @@
       <recent name="com.tammeoja.higherlower.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Unit tests">
+  <component name="RunManager" selected="Spring Boot.HigherlowerApplication">
     <configuration name="GameSessionControllerTest.start" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />

@@ -9,6 +9,7 @@
     import {humanReadableCategories} from "src/humanReadableUtils";
     import ScoresCard from "src/components/ScoresCard.svelte";
     import CheckboxField from "src/forms/CheckboxField.svelte";
+    import HardModeBadge from "src/components/HardModeBadge.svelte";
 
     let gameSessions: GameSession[]
     let hardMode = false
@@ -46,7 +47,10 @@
             {#each gameSessions as game}
                 <div on:click={() => navigate('/' + game.id)}>
                     <Card padding="px-6" class="hover:bg-slate-50 hover:cursor-pointer">
-                        <div class="my-5 text-lg">Score: <span class="font-extrabold">{game.score}</span></div>
+                        <div class="flex justify-between my-5">
+                            <div class="text-lg">Score: <span class="font-extrabold">{game.score}</span></div>
+                            <HardModeBadge hard={game.hard}/>
+                        </div>
                         <div class="flex justify-between mb-4">
                             <div class="text-sm">{new Date(game.finishedAt ?? game.createdAt).toLocaleString()}</div>
                             {#if !game.finishedAt}

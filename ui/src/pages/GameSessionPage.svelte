@@ -11,6 +11,7 @@
     import {humanReadableGameCategoryQuestions} from "src/humanReadableUtils";
     import {fade, fly, type TransitionConfig} from 'svelte/transition'
     import type {FlyParams} from "svelte/types/runtime/transition";
+    import HardModeBadge from "src/components/HardModeBadge.svelte";
 
     export let gameSessionId: string
     let session: GameSession
@@ -64,8 +65,9 @@
 
 <MainPageLayout>
     {#if session && gameRound}
-        <div class="text-center mt-6">
-            <p class="text-2xl">{@html humanReadableGameCategoryQuestions(gameRound.current, gameRound.next)[session.category]}</p>
+        <div class="flex flex-col gap-4 justify-center mt-6 items-center">
+            <HardModeBadge hard={session.hard}/>
+            <div class="text-2xl">{@html humanReadableGameCategoryQuestions(gameRound.current, gameRound.next)[session.category]}</div>
         </div>
         {#key gameRound}
         <div class="grid grid-cols-12 justify-between gap-6 justify-items-center">
