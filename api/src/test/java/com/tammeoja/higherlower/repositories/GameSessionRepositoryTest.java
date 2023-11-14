@@ -1,5 +1,6 @@
 package com.tammeoja.higherlower.repositories;
 
+import com.tammeoja.higherlower.controllers.GameSessionController.GameSessionScores;
 import com.tammeoja.higherlower.entities.GameRoundView;
 import com.tammeoja.higherlower.entities.GameSession;
 import com.tammeoja.higherlower.services.GameRoundService;
@@ -11,7 +12,7 @@ import java.util.UUID;
 
 import static com.tammeoja.higherlower.entities.GameRound.State.FAIL;
 import static com.tammeoja.higherlower.entities.GameRound.State.WIN;
-import static com.tammeoja.higherlower.entities.GameSession.Category.REVENUE;
+import static com.tammeoja.higherlower.entities.GameSession.Category.*;
 import static java.util.UUID.randomUUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -22,9 +23,10 @@ class GameSessionRepositoryTest extends BaseRepositoryTest {
     @Resource
     GameRoundService gameRoundService;
 
+    UUID userId = randomUUID();
+
     @Test
     void saveAndLoad() {
-        var userId = randomUUID();
         var gameId = repository.create(userId, REVENUE);
 
         var result = repository.find(gameId);
@@ -44,8 +46,7 @@ class GameSessionRepositoryTest extends BaseRepositoryTest {
 
     @Test
     void currentScore() {
-        var userId = randomUUID();
-        var gameId = repository.create(userId, REVENUE);
+        var gameId = createGame();
         gameRoundService.generate(gameId);
         assertThat(repository.currentScore(gameId)).isEqualTo(0);
 
@@ -65,8 +66,48 @@ class GameSessionRepositoryTest extends BaseRepositoryTest {
         assertThat(repository.currentScore(gameId)).isEqualTo(2);
     }
 
+    @Test
+    void scores() {
+        var revenueGameId = createGameWithCategory(REVENUE);
+        var revenueGameId2 = createGameWithCategory(REVENUE);
+        var popularityGameId = createGameWithCategory(POPULARITY);
+        var voteAverageGameId = createGameWithCategory(VOTE_AVERAGE);
+
+        generateAndWinRound(revenueGameId);
+        generateAndWinRound(revenueGameId);
+        generateAndWinRound(revenueGameId);
+        generateAndWinRound(revenueGameId);
+        generateAndWinRound(revenueGameId);
+        generateAndWinRound(revenueGameId);
+
+        generateAndWinRound(revenueGameId2);
+        generateAndWinRound(revenueGameId2);
+        generateAndWinRound(revenueGameId2);
+
+        generateAndWinRound(popularityGameId);
+        generateAndWinRound(popularityGameId);
+
+        generateAndWinRound(voteAverageGameId);
+        generateAndWinRound(voteAverageGameId);
+        generateAndWinRound(voteAverageGameId);
+        generateAndWinRound(voteAverageGameId);
+
+        assertThat(repository.scores(userId)).isEqualTo(
+                new GameSessionScores(6, 2, 4, 0, 6)
+        );
+    }
+
+    private UUID createGameWithCategory(GameSession.Category category) {
+        return repository.create(userId, category);
+    }
+
+    private void generateAndWinRound(UUID gameId) {
+        gameRoundService.generate(gameId);
+        var lastRound = gameRoundService.findLast(gameId);
+        gameRoundService.setState(WIN, GameRoundView.builder().id(lastRound.id()).gameSessionId(gameId).build());
+    }
+
     private UUID createGame() {
-        var userId = randomUUID();
-        return repository.create(userId, REVENUE);
+        return createGameWithCategory(REVENUE);
     }
 }

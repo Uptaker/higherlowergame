@@ -26,6 +26,14 @@ export interface GameSessionView {
     rounds: GameRoundView[]
 }
 
+export interface GameSessionScores {
+    highScore: number,
+    popularityScore: number,
+    voteAverageScore: number,
+    runtimeScore: number,
+    revenueScore: number
+}
+
 export interface GameRoundView {
     id: string
     gameSessionId: string,

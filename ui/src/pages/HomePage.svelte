@@ -7,6 +7,7 @@
     import {navigate} from "svelte-navigator";
     import Card from "src/components/Card.svelte";
     import {humanReadableCategories} from "src/humanReadableUtils";
+    import ScoresCard from "src/components/ScoresCard.svelte";
 
     let gameSessions: GameSession[]
 
@@ -19,7 +20,6 @@
         navigate('/' + gameId)
     }
 
-    $: highestScore = gameSessions?.max(s => s.score)
     $: load()
 </script>
 
@@ -34,9 +34,11 @@
     </div>
 
 
+
     {#if gameSessions?.length}
+        <ScoresCard/>
+
         <h2>My games</h2>
-        <h3>Highest score: <b>{highestScore}</b></h3>
         <div class="flex flex-col gap-2 mb-10">
             {#each gameSessions as game}
                 <div on:click={() => navigate('/' + game.id)}>

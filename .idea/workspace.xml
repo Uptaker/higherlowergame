@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="mark game as finished when player guesses incorrectly">
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="adjust card to be more compact">
+      <change afterPath="$PROJECT_DIR$/ui/src/components/CategoryScore.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/components/ScoresCard.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/src/components/Card.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/Card.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/controllers/GameSessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/controllers/GameSessionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/GameSessionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameSessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/services/GameSessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/GameSessionRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/repositories/GameSessionRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameSessionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/tammeoja/higherlower/services/GameSessionServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/src/api/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/api/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/pages/HomePage.svelte" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
@@ -44,6 +51,7 @@
         <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="MovieCard" />
+        <option value="CategoryScore" />
       </list>
     </option>
   </component>
@@ -78,7 +86,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "/home/markus/work/higherlowergame/ui/src",
+    "last_opened_file_path": "/home/markus/work/higherlowergame/ui/src/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -103,11 +111,11 @@
       <recent name="com.tammeoja.higherlower.repositories" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ui/src/components" />
       <recent name="$PROJECT_DIR$/ui/src" />
       <recent name="$PROJECT_DIR$/ui/src/pages" />
       <recent name="$PROJECT_DIR$/ui/src/stores" />
       <recent name="$PROJECT_DIR$/api/src/main/resources/db/changelog" />
-      <recent name="$PROJECT_DIR$/api/src/test/resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -152,30 +160,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameSessionRepositoryTest.currentScore" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.tammeoja.higherlower.repositories.GameSessionRepositoryTest.currentScore&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="GameSessionRepositoryTest.markAsFinished" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -190,6 +174,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.tammeoja.higherlower.repositories.GameSessionRepositoryTest.markAsFinished&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="GameSessionRepositoryTest.scores" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.tammeoja.higherlower.repositories.GameSessionRepositoryTest.scores&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -224,7 +232,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameSessionServiceTest.start" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GameSessionServiceTest.scores" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
@@ -237,7 +245,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.start&quot;" />
+            <option value="&quot;com.tammeoja.higherlower.services.GameSessionServiceTest.scores&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -315,20 +323,20 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.GameRoundRepositoryTest.save_and_load" />
-      <item itemvalue="Gradle.GameSessionRepositoryTest.currentScore" />
       <item itemvalue="Gradle.GameSessionRepositoryTest.markAsFinished" />
+      <item itemvalue="Gradle.GameSessionRepositoryTest.scores" />
       <item itemvalue="Gradle.GameSessionServiceTest.findRound" />
-      <item itemvalue="Gradle.GameSessionServiceTest.start" />
+      <item itemvalue="Gradle.GameSessionServiceTest.scores" />
       <item itemvalue="JUnit.Unit tests" />
       <item itemvalue="Spring Boot.HigherlowerApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GameSessionRepositoryTest.scores" />
+        <item itemvalue="Gradle.GameSessionServiceTest.scores" />
         <item itemvalue="Gradle.GameSessionRepositoryTest.markAsFinished" />
         <item itemvalue="Gradle.GameRoundRepositoryTest.save_and_load" />
         <item itemvalue="Gradle.GameSessionServiceTest.findRound" />
-        <item itemvalue="Gradle.GameSessionServiceTest.start" />
-        <item itemvalue="Gradle.GameSessionRepositoryTest.currentScore" />
       </list>
     </recent_temporary>
   </component>
@@ -345,7 +353,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="60269000" />
+      <workItem from="1699807209368" duration="65861000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -579,7 +587,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699978446612</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="adjust card to be more compact">
+      <option name="closed" value="true" />
+      <created>1699980012804</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1699980012804</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +625,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add minimal Vite/TS/Tailwind UI setup" />
     <MESSAGE value="add envs for docker-compose to read" />
     <MESSAGE value="add assignment README" />
     <MESSAGE value="updated idea files" />
@@ -634,7 +649,8 @@
     <MESSAGE value="IDEA workspace" />
     <MESSAGE value="style changes: icons &amp; game session layout" />
     <MESSAGE value="mark game as finished when player guesses incorrectly" />
-    <option name="LAST_COMMIT_MESSAGE" value="mark game as finished when player guesses incorrectly" />
+    <MESSAGE value="adjust card to be more compact" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust card to be more compact" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

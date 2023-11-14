@@ -1,6 +1,7 @@
 package com.tammeoja.higherlower.services;
 
 import com.tammeoja.higherlower.controllers.GameSessionController;
+import com.tammeoja.higherlower.controllers.GameSessionController.GameSessionScores;
 import com.tammeoja.higherlower.entities.GameRound;
 import com.tammeoja.higherlower.entities.GameRoundView;
 import com.tammeoja.higherlower.entities.GameSession;
@@ -30,6 +31,10 @@ public class GameSessionService {
         if (!gameSession.userId().equals(userId)) throw new ResponseStatusException(FORBIDDEN);
         var rounds = gameRoundService.rounds(gameSessionId).stream().map(this::asView).toList();
         return new GameSessionController.GameSessionView(gameSession, rounds);
+    }
+
+    public GameSessionScores scores(UUID userId) {
+        return gameSessionRepository.scores(userId);
     }
 
     public GameSession find(UUID gameSessionId, UUID userId) {

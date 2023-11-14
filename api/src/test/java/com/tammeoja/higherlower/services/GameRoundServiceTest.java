@@ -14,8 +14,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 // TODO
-// finishedAt, show if homepage if unfinished
-// separate highscore for each gamemode + best highschore
 // hardmode
 // deploy to higherlower.tammeoja.com
 

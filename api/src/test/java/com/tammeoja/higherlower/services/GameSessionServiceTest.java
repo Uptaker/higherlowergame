@@ -1,5 +1,6 @@
 package com.tammeoja.higherlower.services;
 
+import com.tammeoja.higherlower.controllers.GameSessionController.GameSessionScores;
 import com.tammeoja.higherlower.entities.GameRound;
 import com.tammeoja.higherlower.entities.GameRoundView;
 import com.tammeoja.higherlower.entities.GameSession;
@@ -114,5 +115,15 @@ class GameSessionServiceTest {
         verify(gameSessionRepository).currentScore(gameId);
         verify(gameRoundService).setState(expectation ? WIN : FAIL, gameRound.toViewBuilder().current(currentMovie).next(nextMovie).score(1).build());
         if (!expectation) verify(gameSessionRepository).markAsFinished(gameId);
+    }
+
+    @Test
+    void scores() {
+        var gameScores = new GameSessionScores(11, 3, 5, 7, 11);
+        var userId = randomUUID();
+        when(gameSessionRepository.scores(any())).thenReturn(gameScores);
+
+        assertThat(service.scores(userId)).isEqualTo(gameScores);
+        verify(gameSessionRepository).scores(userId);
     }
 }

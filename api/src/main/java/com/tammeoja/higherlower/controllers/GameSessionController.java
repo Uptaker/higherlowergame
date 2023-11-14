@@ -22,6 +22,11 @@ public class GameSessionController {
         return gameSessionService.findByUserId(userId);
     }
 
+    @GetMapping("/scores")
+    public GameSessionScores scores(@CookieValue UUID userId) {
+        return gameSessionService.scores(userId);
+    }
+
     @GetMapping("/{gameSessionId}")
     public GameSessionView rounds(@CookieValue("userId") UUID userId, @PathVariable UUID gameSessionId) {
         return gameSessionService.view(gameSessionId, userId);
@@ -44,4 +49,5 @@ public class GameSessionController {
 
     public record GuessRequest(boolean isHigher) {}
     public record GameSessionView(GameSession session, List<GameRoundView> rounds) {}
+    public record GameSessionScores(int highScore, int popularityScore, int voteAverageScore, int runtimeScore, int revenueScore) {}
 }
