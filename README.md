@@ -1,6 +1,12 @@
-## To build a project
-* Java 1.17 or newer
-* Gradle 7.5 or newer
+# Higher Lower game
+
+See live [demo](https://higherlower.tammeoja.com/) (if up).
+
+## Technologies used
+- Java 17 + Spring Boot 3
+- PostgreSQL + Liquibase
+- Svelte + Tailwind for UI
+
 
 ## Assignment
 * Build a simple game of higher or lower using given movie database. For example http://www.higherlowergame.com/
