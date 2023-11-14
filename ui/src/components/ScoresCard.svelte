@@ -18,9 +18,9 @@
         <div class="text-center text-3xl mb-8">High Score: <b>{scores.highScore}</b></div>
         <div class="grid grid-cols-4">
             <CategoryScore score={scores.voteAverageScore} label="Vote average"/>
+            <CategoryScore score={scores.popularityScore} label="Popularity"/>
             <CategoryScore score={scores.runtimeScore} label="Runtime"/>
             <CategoryScore score={scores.revenueScore} label="Revenue"/>
-            <CategoryScore score={scores.popularityScore} label="Popularity"/>
         </div>
     </Card>
 {/if}

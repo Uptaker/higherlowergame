@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="final prep: configure outputted jar and setup docker to use different default ports">
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/repositories/MovieRepository.java" afterDir="false" />
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="introduce hard mode badge and and show where applicable">
+      <change beforePath="$PROJECT_DIR$/ui/src/components/ScoresCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/ScoresCard.svelte" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +44,7 @@
         <option value="MovieCard" />
         <option value="CategoryScore" />
         <option value="LogoSlogan" />
+        <option value="HardModeBadge" />
       </list>
     </option>
   </component>
@@ -345,7 +346,7 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="81012000" />
+      <workItem from="1699807209368" duration="81976000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -643,7 +644,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699998976043</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="try to not use the same value as current movie in hard mode as well">
+      <option name="closed" value="true" />
+      <created>1700003036368</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1700003036368</updated>
+    </task>
+    <task id="LOCAL-00039" summary="introduce hard mode badge and and show where applicable">
+      <option name="closed" value="true" />
+      <created>1700003868295</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1700003868295</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,8 +690,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="system can check and set a user if there isn't any" />
-    <MESSAGE value="do not expire the userId cookie" />
     <MESSAGE value="use plural name for REST controller" />
     <MESSAGE value="try implementing higher/lower game" />
     <MESSAGE value="use clock in UserService for test" />
@@ -698,7 +713,9 @@
     <MESSAGE value="show the actual category values after each round" />
     <MESSAGE value="fix question movie order" />
     <MESSAGE value="final prep: configure outputted jar and setup docker to use different default ports" />
-    <option name="LAST_COMMIT_MESSAGE" value="final prep: configure outputted jar and setup docker to use different default ports" />
+    <MESSAGE value="try to not use the same value as current movie in hard mode as well" />
+    <MESSAGE value="introduce hard mode badge and and show where applicable" />
+    <option name="LAST_COMMIT_MESSAGE" value="introduce hard mode badge and and show where applicable" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
