@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="introduce hard mode badge and and show where applicable">
-      <change beforePath="$PROJECT_DIR$/ui/src/components/ScoresCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/ui/src/components/ScoresCard.svelte" afterDir="false" />
+    <list default="true" id="5284c579-7c64-4279-b26b-e9799871bf68" name="Changes" comment="bugfix: override card's default colors with the round state colors">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/tammeoja/higherlower/configuration/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
     </list>
     <list id="1b2b7664-8920-4dfb-af74-085fde873864" name="ignore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,12 +42,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="MovieCard" />
         <option value="CategoryScore" />
         <option value="LogoSlogan" />
         <option value="HardModeBadge" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,7 +77,6 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "android.gradle.sync.needed": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
@@ -346,7 +348,8 @@
       <workItem from="1699802722084" duration="2141000" />
       <workItem from="1699804871493" duration="2046000" />
       <workItem from="1699806967230" duration="137000" />
-      <workItem from="1699807209368" duration="81976000" />
+      <workItem from="1699807209368" duration="82540000" />
+      <workItem from="1700049516958" duration="6581000" />
     </task>
     <task id="LOCAL-00001" summary="add minimal Vite/TS/Tailwind UI setup">
       <option name="closed" value="true" />
@@ -660,7 +663,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700003868295</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="use the same order in category scores as in category selection buttons">
+      <option name="closed" value="true" />
+      <created>1700004012744</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1700004012744</updated>
+    </task>
+    <task id="LOCAL-00041" summary="bugfix: override card's default colors with the round state colors">
+      <option name="closed" value="true" />
+      <created>1700049682478</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1700049682478</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,8 +709,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="use plural name for REST controller" />
-    <MESSAGE value="try implementing higher/lower game" />
     <MESSAGE value="use clock in UserService for test" />
     <MESSAGE value="drop score in game_sessions table in favor of counting by wins" />
     <MESSAGE value="no need to use health checks for this app - needlessly spams logs" />
@@ -715,7 +732,9 @@
     <MESSAGE value="final prep: configure outputted jar and setup docker to use different default ports" />
     <MESSAGE value="try to not use the same value as current movie in hard mode as well" />
     <MESSAGE value="introduce hard mode badge and and show where applicable" />
-    <option name="LAST_COMMIT_MESSAGE" value="introduce hard mode badge and and show where applicable" />
+    <MESSAGE value="use the same order in category scores as in category selection buttons" />
+    <MESSAGE value="bugfix: override card's default colors with the round state colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix: override card's default colors with the round state colors" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
