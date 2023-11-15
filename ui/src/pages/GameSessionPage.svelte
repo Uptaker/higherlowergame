@@ -103,7 +103,7 @@
                 {#each rounds as round}
                     <Card title="{round.current.title} vs {round.next.title}" padding="px-6"
                           subtitle={new Date(round.createdAt).toLocaleString()}
-                          class="{round.state === 'WIN' ? 'bg-green-200' : 'bg-red-200'}"/>
+                          class="{round.state === 'WIN' ? '!bg-green-200' : '!bg-red-200'}"/>
                 {/each}
             </div>
         {/if}
