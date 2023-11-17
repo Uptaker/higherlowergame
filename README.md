@@ -42,3 +42,16 @@ See live [demo](https://higherlower.tammeoja.com/) (if up).
     * Your code has tests where necessary
     * You are ready to explain your game & code
     * You are aware of the possible bugs in your game & code
+
+  ## Devemoplemt/building
+  You can use `docker compose` to build and initialize the app immediately.
+   ```bash
+   docker compose up --build -d
+   ```
+
+  Alternatively for smoother development:
+  - start DB `docker compose up --build higherlower-db -d
+  - in `ui` folder, `npm start` or use IDEA run configuration `Start UI`
+  - for server, use the `Start Server` IDEA run configuration and use the same environment variables as in .env
+ 
+  For tests, use the preconfigured `Test UI` in IDEA, with the Docker DB started.
