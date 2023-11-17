@@ -50,7 +50,7 @@ See live [demo](https://higherlower.tammeoja.com/) (if up).
    ```
 
   Alternatively for smoother development:
-  - start DB `docker compose up --build higherlower-db -d
+  - start DB `docker compose up --build higherlower-db -d`
   - in `ui` folder, `npm start` or use IDEA run configuration `Start UI`
   - for server, use the `Start Server` IDEA run configuration and use the same environment variables as in .env
  
