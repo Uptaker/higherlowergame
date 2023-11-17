@@ -43,7 +43,7 @@ See live [demo](https://higherlower.tammeoja.com/) (if up).
     * You are ready to explain your game & code
     * You are aware of the possible bugs in your game & code
 
-  ## Devemoplemt/building
+  ## Development/building
   You can use `docker compose` to build and initialize the app immediately.
    ```bash
    docker compose up --build -d
